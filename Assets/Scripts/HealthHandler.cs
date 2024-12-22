@@ -10,6 +10,7 @@ public class HealthHandler : MonoBehaviour
     {
         Debug.Assert(damage >= 0, "Damage cannot be negative, use Heal if you want to heal");
         currentHealth -= Mathf.Max(0, damage-armor);
+        if (currentHealth <= 0) Death();
     }
 
     public void Heal(float value)
@@ -33,6 +34,11 @@ public class HealthHandler : MonoBehaviour
     {
         Debug.Assert(armorBoost >= 0, "armorBoost can't be less than zero, use EquipArmor instead");
         armor -= armorBoost;
+    }
+
+    public void Death()
+    {
+        print("you dead");
     }
     
 }

@@ -1,0 +1,428 @@
+Wavefront OBJ material file
+# Contains 31 materials
+
+newmtl Stone
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGB.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGB.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Grass_Block
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGB.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGB.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Dirt
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGB.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGB.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Podzol
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGB.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGB.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Stationary_Water
+Ns 216.75
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0.03 0.03 0.03
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 4
+# d 0.535
+# Tr 0.465
+Tf 0.465 0.465 0.465
+
+newmtl Stationary_Lava
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+Ke 1 1 1
+map_Ka FlatbyCreeperCoastal-RGB.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGB.png
+map_Ke FlatbyCreeperCoastal-RGB.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Sand
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGB.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGB.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Gravel
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGB.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGB.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Oak_Log
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGB.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGB.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Oak_Leaves
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Spruce_Leaves
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Glass
+Ns 242.25
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0.03 0.03 0.03
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Sandstone
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGB.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGB.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Grass
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Fern
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Dead_Bush
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Dandelion
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Poppy
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Azure_Bluet
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Red_Tulip
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Orange_Tulip
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl White_Tulip
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Pink_Tulip
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Oxeye_Daisy
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Cornflower
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Vines
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Dark_Oak_Leaves
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Dark_Oak_Log
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGB.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGB.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Double_Tallgrass
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Large_Fern
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGBA.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGBA.png
+map_d FlatbyCreeperCoastal-Alpha.png
+illum 2
+# d 1
+# Tr 0
+
+newmtl Bee_Nest
+Ns 0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 0 0 0
+map_Ka FlatbyCreeperCoastal-RGB.png
+# for G3D, to make textures look blocky:
+interpolateMode NEAREST_MAGNIFICATION_TRILINEAR_MIPMAP_MINIFICATION
+map_Kd FlatbyCreeperCoastal-RGB.png
+illum 2
+# d 1
+# Tr 0

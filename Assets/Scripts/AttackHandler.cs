@@ -7,7 +7,8 @@ public class AttackHandler : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float cooldown;
     [SerializeField] private Collider attackShape;
-
+    [SerializeField] private float knockback;
+    
     private float _timer;
 
     void Start()
@@ -19,19 +20,27 @@ public class AttackHandler : MonoBehaviour
     {
         _timer = Mathf.Max(_timer - Time.deltaTime, 0f);
     }
-
+    
+    /// <summary>
+    /// Launch an Attack, and return true if it's possible to attack
+    /// see what Units are in the attackShape, apply damage and knockback to those unit
+    /// </summary>
     public bool Attack()
     {
         if (_timer >= 0) return false;
+        
         Collider[] targets = DetectTargets();
         foreach (Collider target in targets)
         {
             if (!target.CompareTag("Unit")) continue;
             // GetComponent is expensive in performance, optimize here if it's slow
             Unit unit = target.GetComponent<Unit>();
-            unit.healthHandler.TakeDamage(damage);
+            unit.Health.TakeDamage(damage);
+            Vector3 knockbackVector = knockback * (target.transform.position - transform.position).normalized;
+            unit.Body.AddForce(knockbackVector, ForceMode.Impulse);
 
         }
+        _timer = cooldown;
         return true;
     }
 

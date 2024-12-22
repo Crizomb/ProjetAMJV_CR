@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    [SerializeField] public HealthHandler healthHandler;
-    [SerializeField] public AttackHandler attackHandler;
+    [field: SerializeField] public Rigidbody Body { get; private set; }
+    [field: SerializeField] public HealthHandler Health { get; private set; }
+    [field: SerializeField] public AttackHandler Attack { get; private set; }
     
 
     void Start()
     {
-        // Null safety enjoyers things 
-        Debug.Assert(healthHandler != null);
-        Debug.Assert(attackHandler != null);
-
+        Debug.Assert(Body != null);   
+        Debug.Assert(Health != null);
+        Debug.Assert(Attack != null);
     }
     
     
