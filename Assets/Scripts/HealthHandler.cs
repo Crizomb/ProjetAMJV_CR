@@ -1,10 +1,18 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Unit))]
 public class HealthHandler : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
     [SerializeField] private float armor;
+    
+    private Unit _unit;
+
+    public void Awake()
+    {
+        _unit = GetComponent<Unit>();
+    }
 
     public void TakeDamage(float damage)
     {
@@ -39,6 +47,14 @@ public class HealthHandler : MonoBehaviour
     public void Death()
     {
         print("you dead");
+        if (_unit.IsTeamA)
+        {
+            GlobalsVariable.AliveUnitsTeamA.Remove(_unit);
+        }
+        else
+        {
+            GlobalsVariable.AliveUnitsTeamB.Remove(_unit);
+        }
     }
     
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Unit))]
 public class AttackHandler : MonoBehaviour
 {
     [SerializeField] private float damage;
@@ -10,6 +11,12 @@ public class AttackHandler : MonoBehaviour
     [SerializeField] private float knockback;
     
     private float _timer;
+    private Unit _unit;
+
+    void Awake()
+    {
+        _unit = GetComponent<Unit>();
+    }
 
     void Start()
     {
@@ -23,7 +30,7 @@ public class AttackHandler : MonoBehaviour
     
     /// <summary>
     /// Launch an Attack, and return true if it's possible to attack
-    /// see what Units are in the attackShape, apply damage and knockback to those unit
+    /// see what Units are in the attackShape, apply damage and knockback to those unit if they're ennemies
     /// </summary>
     public bool Attack()
     {
@@ -35,6 +42,8 @@ public class AttackHandler : MonoBehaviour
             if (!target.CompareTag("Unit")) continue;
             // GetComponent is expensive in performance, optimize here if it's slow
             Unit unit = target.GetComponent<Unit>();
+            // No friendly fire
+            if (unit.IsTeamA == _unit.IsTeamA) continue;
             unit.Health.TakeDamage(damage);
             Vector3 knockbackVector = knockback * (target.transform.position - transform.position).normalized;
             unit.Body.AddForce(knockbackVector, ForceMode.Impulse);
