@@ -42,8 +42,10 @@ public class AttackHandler : MonoBehaviour
             if (!target.CompareTag("Unit")) continue;
             // GetComponent is expensive in performance, optimize here if it's slow
             Unit unit = target.GetComponent<Unit>();
+            
             // No friendly fire
             if (unit.IsTeamA == _unit.IsTeamA) continue;
+            
             unit.Health.TakeDamage(damage);
             Vector3 knockbackVector = knockback * (target.transform.position - transform.position).normalized;
             unit.Body.AddForce(knockbackVector, ForceMode.Impulse);
