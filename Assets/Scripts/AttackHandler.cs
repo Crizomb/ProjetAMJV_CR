@@ -25,7 +25,8 @@ public class AttackHandler : MonoBehaviour
 
     void Update()
     {
-        _timer = Mathf.Max(_timer - Time.deltaTime, 0f);
+        _timer = _timer - Time.deltaTime;
+        Attack();
     }
     
     /// <summary>
@@ -34,9 +35,10 @@ public class AttackHandler : MonoBehaviour
     /// </summary>
     public bool Attack()
     {
-        if (_timer >= 0) return false;
+        if (_timer > 0) return false;
         
         Collider[] targets = DetectTargets();
+        print(targets.Length);
         foreach (Collider target in targets)
         {
             if (!target.CompareTag("Unit")) continue;
@@ -58,17 +60,15 @@ public class AttackHandler : MonoBehaviour
     private Collider[] DetectTargets()
     {
         // Make sure to manager layers for better performance
-        
-        List<Unit> targets = new List<Unit>();
         Collider[] hitColliders;
-
+    
         switch (attackShape)
         {
             case SphereCollider sphere:
-                hitColliders = Physics.OverlapSphere(sphere.transform.position, sphere.radius, sphere.includeLayers);
+                hitColliders = Physics.OverlapSphere(sphere.transform.position, sphere.radius);
                 break;
             case BoxCollider box:
-                hitColliders = Physics.OverlapBox(box.bounds.center, box.bounds.extents, box.transform.rotation, box.includeLayers);
+                hitColliders = Physics.OverlapBox(box.bounds.center, box.bounds.extents, box.transform.rotation);
                 break;
             default:
                 throw new ArgumentException("Only sphere or box are supported");
