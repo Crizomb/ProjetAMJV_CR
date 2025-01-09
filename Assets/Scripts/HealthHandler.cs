@@ -55,6 +55,8 @@ public class HealthHandler : MonoBehaviour
         {
             GlobalsVariable.AliveUnitsTeamB.Remove(_unit);
         }
+        
+        Destroy(gameObject);
     }
     
 }

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Unit))]
 public class AttackHandler : MonoBehaviour
@@ -8,7 +10,8 @@ public class AttackHandler : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float cooldown;
     [SerializeField] private Collider attackShape;
-    [SerializeField] private float knockback;
+    [SerializeField] private float knockbackHorizontalForce;
+    [SerializeField] private float knockbackVerticalForce;
     
     private float _timer;
     private Unit _unit;
@@ -20,7 +23,8 @@ public class AttackHandler : MonoBehaviour
 
     void Start()
     {
-        _timer = cooldown;
+        // Random to avoid too much synchronicity 
+        _timer = cooldown + Random.Range(-cooldown*0.2f, cooldown*0.2f);
     }
 
     void Update()
@@ -38,37 +42,36 @@ public class AttackHandler : MonoBehaviour
         if (_timer > 0) return false;
         
         Collider[] targets = DetectTargets();
-        print(targets.Length);
         foreach (Collider target in targets)
         {
             if (!target.CompareTag("Unit")) continue;
             // GetComponent is expensive in performance, optimize here if it's slow
-            Unit unit = target.GetComponent<Unit>();
+            Unit targetUnit = target.GetComponent<Unit>();
             
             // No friendly fire
-            if (unit.IsTeamA == _unit.IsTeamA) continue;
+            if (targetUnit.IsTeamA == _unit.IsTeamA) continue;
             
-            unit.Health.TakeDamage(damage);
-            Vector3 knockbackVector = knockback * (target.transform.position - transform.position).normalized;
-            unit.Body.AddForce(knockbackVector, ForceMode.Impulse);
-
+            targetUnit.Health.TakeDamage(damage);
+            Vector3 knockbackVector = knockbackHorizontalForce * (target.transform.position - transform.position).normalized 
+                                      + knockbackVerticalForce *  Vector3.up;
+            
+            targetUnit.StartCoroutine(targetUnit.Move.TakeImpulse(knockbackVector));
         }
-        _timer = cooldown;
+        _timer = cooldown + Random.Range(-cooldown*0.2f, cooldown*0.2f);
         return true;
     }
 
     private Collider[] DetectTargets()
     {
-        // Make sure to manager layers for better performance
         Collider[] hitColliders;
     
         switch (attackShape)
         {
             case SphereCollider sphere:
-                hitColliders = Physics.OverlapSphere(sphere.transform.position, sphere.radius);
+                hitColliders = Physics.OverlapSphere(sphere.transform.position, sphere.radius, sphere.includeLayers);
                 break;
             case BoxCollider box:
-                hitColliders = Physics.OverlapBox(box.bounds.center, box.bounds.extents, box.transform.rotation);
+                hitColliders = Physics.OverlapBox(box.bounds.center, box.bounds.extents, box.transform.rotation, box.includeLayers);
                 break;
             default:
                 throw new ArgumentException("Only sphere or box are supported");
