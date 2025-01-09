@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(Unit))]
+[RequireComponent(typeof(MinecraftUnit))]
 public class AttackHandler : MonoBehaviour
 {
     [SerializeField] private float damage;
@@ -14,11 +14,11 @@ public class AttackHandler : MonoBehaviour
     [SerializeField] private float knockbackVerticalForce;
     
     private float _timer;
-    private Unit _unit;
+    private MinecraftUnit _minecraftUnit;
 
     void Awake()
     {
-        _unit = GetComponent<Unit>();
+        _minecraftUnit = GetComponent<MinecraftUnit>();
     }
 
     void Start()
@@ -46,16 +46,22 @@ public class AttackHandler : MonoBehaviour
         {
             if (!target.CompareTag("Unit")) continue;
             // GetComponent is expensive in performance, optimize here if it's slow
-            Unit targetUnit = target.GetComponent<Unit>();
+            AbstractUnit targetUnit = target.GetComponent<AbstractUnit>();
             
             // No friendly fire
-            if (targetUnit.IsTeamA == _unit.IsTeamA) continue;
+            if (targetUnit.IsTeamA == _minecraftUnit.IsTeamA) continue;
             
-            targetUnit.Health.TakeDamage(damage);
+            targetUnit.TakeDamage(damage);
+            
             Vector3 knockbackVector = knockbackHorizontalForce * (target.transform.position - transform.position).normalized 
                                       + knockbackVerticalForce *  Vector3.up;
             
-            targetUnit.StartCoroutine(targetUnit.Move.TakeImpulse(knockbackVector));
+            // Knockback logic specific to MinecraftUnit (can't force other team to do our weird impl)
+            if (targetUnit is MinecraftUnit)
+            {
+                MinecraftUnit minecraftTarget = (MinecraftUnit)targetUnit;
+                minecraftTarget.StartCoroutine(minecraftTarget.MovementHandler.TakeImpulse(knockbackVector));
+            }
         }
         _timer = cooldown + Random.Range(-cooldown*0.2f, cooldown*0.2f);
         return true;

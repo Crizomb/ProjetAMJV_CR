@@ -1,17 +1,17 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Unit))]
+[RequireComponent(typeof(MinecraftUnit))]
 public class HealthHandler : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
     [SerializeField] private float armor;
     
-    private Unit _unit;
+    private MinecraftUnit _minecraftUnit;
 
     public void Awake()
     {
-        _unit = GetComponent<Unit>();
+        _minecraftUnit = GetComponent<MinecraftUnit>();
     }
 
     public void TakeDamage(float damage)
@@ -47,13 +47,13 @@ public class HealthHandler : MonoBehaviour
     public void Death()
     {
         print("you dead");
-        if (_unit.IsTeamA)
+        if (_minecraftUnit.IsTeamA)
         {
-            GlobalsVariable.AliveUnitsTeamA.Remove(_unit);
+            GlobalsVariable.AliveUnitsTeamA.Remove(_minecraftUnit);
         }
         else
         {
-            GlobalsVariable.AliveUnitsTeamB.Remove(_unit);
+            GlobalsVariable.AliveUnitsTeamB.Remove(_minecraftUnit);
         }
         
         Destroy(gameObject);

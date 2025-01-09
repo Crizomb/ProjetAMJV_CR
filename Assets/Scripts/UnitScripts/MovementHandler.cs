@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.iOS;
 
-[RequireComponent(typeof(Unit))]
+[RequireComponent(typeof(MinecraftUnit))]
 [RequireComponent(typeof(Rigidbody))]
 public class MovementHandler : MonoBehaviour
 {
@@ -14,12 +14,12 @@ public class MovementHandler : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform defaultMoveTarget;
     
-    private Unit _unit;
+    private MinecraftUnit _minecraftUnit;
     private Rigidbody _rigidbody;
 
     void Awake()
     {
-        _unit = GetComponent<Unit>();
+        _minecraftUnit = GetComponent<MinecraftUnit>();
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -48,23 +48,23 @@ public class MovementHandler : MonoBehaviour
         MoveTowards(FindNearestEnemy().transform.position);
     }
 
-    Unit FindNearestEnemy()
+    MinecraftUnit FindNearestEnemy()
     {
-        List<Unit> enemies = _unit.IsTeamA ? GlobalsVariable.AliveUnitsTeamB : GlobalsVariable.AliveUnitsTeamA;
+        List<MinecraftUnit> enemies = _minecraftUnit.IsTeamA ? GlobalsVariable.AliveUnitsTeamB : GlobalsVariable.AliveUnitsTeamA;
         
-        Unit closestUnit = null;
+        MinecraftUnit closestMinecraftUnit = null;
         float closestDistance = float.MaxValue;
-        foreach (Unit enemy in enemies)
+        foreach (MinecraftUnit enemy in enemies)
         {
             float distanceToEnemy = (enemy.transform.position - transform.position).sqrMagnitude;
             if (distanceToEnemy < closestDistance)
             {
-                closestUnit = enemy;
+                closestMinecraftUnit = enemy;
                 closestDistance = distanceToEnemy;
             }
         }
 
-        return closestUnit;
+        return closestMinecraftUnit;
     }
     
     void Update()
@@ -94,7 +94,7 @@ public class MovementHandler : MonoBehaviour
             // Die if exited navMesh for to long
             if (noSurfaceTime > 6.0f)
             {
-                _unit.Health.Death();
+                _minecraftUnit.HealthHandler.Death();
                 yield break;
             }
             

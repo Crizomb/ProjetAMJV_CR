@@ -179,12 +179,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9815bed5dc151c8c6a271899ed1b7c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Body>k__BackingField: {fileID: 3280843376750909586}
-  <Health>k__BackingField: {fileID: 8213395333053285225}
-  <Attack>k__BackingField: {fileID: 8908285060348773052}
-  <Move>k__BackingField: {fileID: 6587310683195830629}
-  <IsTeamA>k__BackingField: 1
   price: 0
+  <IsTeamA>k__BackingField: 1
+  <Body>k__BackingField: {fileID: 3280843376750909586}
+  <HealthHandler>k__BackingField: {fileID: 8213395333053285225}
+  <AttackHandler>k__BackingField: {fileID: 8908285060348773052}
+  <MovementHandler>k__BackingField: {fileID: 6587310683195830629}
 --- !u!114 &8213395333053285225
 MonoBehaviour:
   m_ObjectHideFlags: 0
