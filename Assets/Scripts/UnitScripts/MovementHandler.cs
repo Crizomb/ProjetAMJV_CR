@@ -66,15 +66,6 @@ public class MovementHandler : MonoBehaviour
 
         return closestMinecraftUnit;
     }
-    
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //MoveTowards(defaultMoveTarget.position);
-            MoveTowardsNearest();
-        }
-    }
 
     public IEnumerator TakeImpulse(Vector3 impulse)
     {

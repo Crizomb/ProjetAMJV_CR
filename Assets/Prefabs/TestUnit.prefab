@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1284886913308718791}
   - component: {fileID: 7841837150169133400}
   - component: {fileID: 3280843376750909586}
+  - component: {fileID: 1854268353119403178}
   - component: {fileID: 5811210244409818000}
   - component: {fileID: 1085507300097694875}
   - component: {fileID: 2572766376840025726}
@@ -122,6 +123,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 1
+--- !u!114 &1854268353119403178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076979688870881298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 794f919ac24609c05b9c690aaab19146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathFps: 1
+  attackFps: 5
 --- !u!195 &5811210244409818000
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -181,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 0
   <IsTeamA>k__BackingField: 1
+  <IsQueen>k__BackingField: 0
   <Body>k__BackingField: {fileID: 3280843376750909586}
   <HealthHandler>k__BackingField: {fileID: 8213395333053285225}
   <AttackHandler>k__BackingField: {fileID: 8908285060348773052}

@@ -30,7 +30,6 @@ public class AttackHandler : MonoBehaviour
     void Update()
     {
         _timer = _timer - Time.deltaTime;
-        Attack();
     }
     
     /// <summary>
