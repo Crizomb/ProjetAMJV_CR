@@ -4,7 +4,6 @@ using System.Linq;
 using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.InputSystem.iOS;
 
 [RequireComponent(typeof(MinecraftUnit))]
 [RequireComponent(typeof(Rigidbody))]
