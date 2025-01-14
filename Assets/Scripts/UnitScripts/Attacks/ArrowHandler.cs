@@ -8,11 +8,17 @@ public class ArrowHandler : MonoBehaviour
 {
     [SerializeField] private float baseDamage;
     [SerializeField] private float baseKnockback;
-    public Rigidbody _rigidBody;
+    private Rigidbody _rigidBody;
 
     void Awake()
     {
         _rigidBody = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        // Align with speed
+        if (_rigidBody.linearVelocity.magnitude >= 1f) transform.forward = _rigidBody.linearVelocity.normalized;
     }
 
     public void LaunchArrow(Vector3 baseSpeed)
@@ -33,5 +39,7 @@ public class ArrowHandler : MonoBehaviour
             }
             unit.TakeDamage(baseDamage);
         }
+        
+        Destroy(this.gameObject);
     }
 }

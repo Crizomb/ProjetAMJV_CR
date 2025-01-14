@@ -14,7 +14,7 @@ public class AttackHandler : MonoBehaviour
     [SerializeField] protected float knockbackVerticalForce;
     
     protected float _timer;
-    private MinecraftUnit _minecraftUnit;
+    protected MinecraftUnit _minecraftUnit;
 
     void Awake()
     {

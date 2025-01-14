@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,17 +9,33 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Rigidbody))]
 public class MovementHandler : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] public float speed;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform defaultMoveTarget;
+
+    private float knockbackTime = 1.2f;
+    private float noNavMeshDeadTime = 6.0f;
+
+    [HideInInspector] public AbstractUnit TargetUnit {get; private set; }
     
     private MinecraftUnit _minecraftUnit;
     private Rigidbody _rigidbody;
+    
 
     void Awake()
     {
         _minecraftUnit = GetComponent<MinecraftUnit>();
         _rigidbody = GetComponent<Rigidbody>();
+    }
+
+    void Start()
+    {
+        agent.speed = speed;
+    }
+
+    private void Update()
+    {
+        if (Mathf.Abs(agent.speed - speed) < 0.01f) agent.speed = speed;
     }
 
     public void ChangeSpeed(float newSpeed)
@@ -43,7 +60,8 @@ public class MovementHandler : MonoBehaviour
 
     public void MoveTowardsNearest()
     {
-        MoveTowards(FindNearestEnemy().transform.position);
+        TargetUnit = FindNearestEnemy();
+        MoveTowards(TargetUnit.transform.position);
     }
 
     AbstractUnit FindNearestEnemy()
@@ -70,7 +88,7 @@ public class MovementHandler : MonoBehaviour
         // Unity navmesh, can't handle physics (it rewrite velocity). So we deactivate it when applying force.
         agent.enabled = false;
         _rigidbody.AddForce(impulse, ForceMode.Impulse);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(knockbackTime);
 
         float noSurfaceTime = 0.0f;
         
@@ -81,7 +99,7 @@ public class MovementHandler : MonoBehaviour
             noSurfaceTime += 0.5f;
             
             // Die if exited navMesh for to long
-            if (noSurfaceTime > 6.0f)
+            if (noSurfaceTime > noNavMeshDeadTime)
             {
                 _minecraftUnit.HealthHandler.Death();
                 yield break;
