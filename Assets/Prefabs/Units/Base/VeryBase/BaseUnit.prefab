@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 8908285060348773052}
   - component: {fileID: 6587310683195830629}
   m_Layer: 6
-  m_Name: TestUnit
+  m_Name: BaseUnit
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

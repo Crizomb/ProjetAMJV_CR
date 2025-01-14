@@ -7,13 +7,13 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(MinecraftUnit))]
 public class AttackHandler : MonoBehaviour
 {
-    [SerializeField] private float damage;
-    [SerializeField] private float cooldown;
-    [SerializeField] private Collider attackShape;
-    [SerializeField] private float knockbackHorizontalForce;
-    [SerializeField] private float knockbackVerticalForce;
+    [SerializeField] protected float damage;
+    [SerializeField] protected float cooldown;
+    [SerializeField] protected Collider attackShape;
+    [SerializeField] protected float knockbackHorizontalForce;
+    [SerializeField] protected float knockbackVerticalForce;
     
-    private float _timer;
+    protected float _timer;
     private MinecraftUnit _minecraftUnit;
 
     void Awake()
@@ -36,7 +36,7 @@ public class AttackHandler : MonoBehaviour
     /// Launch an Attack, and return true if it's possible to attack
     /// see what Units are in the attackShape, apply damage and knockback to those unit if they're ennemies
     /// </summary>
-    public bool Attack()
+    public virtual bool Attack()
     {
         if (_timer > 0) return false;
         

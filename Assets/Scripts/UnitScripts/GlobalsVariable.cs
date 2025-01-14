@@ -4,8 +4,8 @@ using UnityEngine;
 
 public static class GlobalsVariable
 {
-    public static List<MinecraftUnit> AliveUnitsTeamA = new List<MinecraftUnit>();
-    public static List<MinecraftUnit> AliveUnitsTeamB = new List<MinecraftUnit>();
+    public static List<AbstractUnit> AliveUnitsTeamA = new List<AbstractUnit>();
+    public static List<AbstractUnit> AliveUnitsTeamB = new List<AbstractUnit>();
     public static AbstractUnit QueenA;
     public static AbstractUnit QueenB;
 }

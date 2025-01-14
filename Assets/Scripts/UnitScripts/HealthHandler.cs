@@ -46,16 +46,9 @@ public class HealthHandler : MonoBehaviour
 
     public void Death()
     {
-        print("you dead");
-        if (_minecraftUnit.IsTeamA)
-        {
-            GlobalsVariable.AliveUnitsTeamA.Remove(_minecraftUnit);
-        }
-        else
-        {
-            GlobalsVariable.AliveUnitsTeamB.Remove(_minecraftUnit);
-        }
-        
+        DeathSate deathState = _minecraftUnit.AbstractDeath();
+        if (deathState == DeathSate.QueenADead) print("TEAM B WIN GG");
+        if (deathState == DeathSate.QueenBDead) print("TEAM A WIN GG");
         Destroy(gameObject);
     }
     

@@ -46,23 +46,23 @@ public class MovementHandler : MonoBehaviour
         MoveTowards(FindNearestEnemy().transform.position);
     }
 
-    MinecraftUnit FindNearestEnemy()
+    AbstractUnit FindNearestEnemy()
     {
-        List<MinecraftUnit> enemies = _minecraftUnit.IsTeamA ? GlobalsVariable.AliveUnitsTeamB : GlobalsVariable.AliveUnitsTeamA;
+        List<AbstractUnit> enemies = _minecraftUnit.IsTeamA ? GlobalsVariable.AliveUnitsTeamB : GlobalsVariable.AliveUnitsTeamA;
         
-        MinecraftUnit closestMinecraftUnit = null;
+        AbstractUnit closestUnit = null;
         float closestDistance = float.MaxValue;
-        foreach (MinecraftUnit enemy in enemies)
+        foreach (AbstractUnit enemy in enemies)
         {
             float distanceToEnemy = (enemy.transform.position - transform.position).sqrMagnitude;
             if (distanceToEnemy < closestDistance)
             {
-                closestMinecraftUnit = enemy;
+                closestUnit = enemy;
                 closestDistance = distanceToEnemy;
             }
         }
 
-        return closestMinecraftUnit;
+        return closestUnit;
     }
 
     public IEnumerator TakeImpulse(Vector3 impulse)
