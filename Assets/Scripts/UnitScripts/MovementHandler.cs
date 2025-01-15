@@ -58,9 +58,13 @@ public class MovementHandler : MonoBehaviour
         if (agent.enabled) agent.SetDestination(destination);
     }
 
-    public void MoveTowardsNearest()
+    public void UpdateNearest()
     {
         TargetUnit = FindNearestEnemy();
+    }
+
+    public void MoveTowardsNearest()
+    {
         MoveTowards(TargetUnit.transform.position);
     }
 

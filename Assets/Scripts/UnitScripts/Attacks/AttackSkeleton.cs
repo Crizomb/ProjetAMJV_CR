@@ -10,12 +10,10 @@ public class AttackSkeleton : AttackHandler
     
     public override bool Attack()
     {
-        if (_timer > 0) return false;
         float launchAngle = findLaunchAngle();
         //print(launchAngle);
         // If target not reachable
         if (launchAngle < 0) return false;
-        _timer = cooldown;
         
         GameObject arrow = Instantiate(arrowPrefab, spawnPos.position, spawnPos.rotation);
         ArrowHandler arrowHandler = arrow.GetComponent<ArrowHandler>();

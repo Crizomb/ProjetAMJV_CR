@@ -13,7 +13,6 @@ public class AttackHandler : MonoBehaviour
     [SerializeField] protected float knockbackHorizontalForce;
     [SerializeField] protected float knockbackVerticalForce;
     
-    protected float _timer;
     protected MinecraftUnit _minecraftUnit;
 
     void Awake()
@@ -23,14 +22,9 @@ public class AttackHandler : MonoBehaviour
 
     void Start()
     {
-        // Random to avoid too much synchronicity 
-        _timer = cooldown + Random.Range(-cooldown*0.2f, cooldown*0.2f);
+        InvokeRepeating(nameof(Attack), Random.Range(-cooldown*0.2f, cooldown*0.2f), cooldown);
     }
 
-    void Update()
-    {
-        _timer = _timer - Time.deltaTime;
-    }
     
     /// <summary>
     /// Launch an Attack, and return true if it's possible to attack
@@ -38,7 +32,6 @@ public class AttackHandler : MonoBehaviour
     /// </summary>
     public virtual bool Attack()
     {
-        if (_timer > 0) return false;
         
         Collider[] targets = DetectTargets();
         foreach (Collider target in targets)
@@ -62,7 +55,6 @@ public class AttackHandler : MonoBehaviour
                 minecraftTarget.StartCoroutine(minecraftTarget.MovementHandler.TakeImpulse(knockbackVector));
             }
         }
-        _timer = cooldown + Random.Range(-cooldown*0.2f, cooldown*0.2f);
         return true;
     }
 
