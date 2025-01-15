@@ -22,6 +22,8 @@ public class AttackHandler : MonoBehaviour
 
     void Start()
     {
+        print("coldown");
+        print(cooldown);
         InvokeRepeating(nameof(Attack), Random.Range(-cooldown*0.2f, cooldown*0.2f), cooldown);
     }
 

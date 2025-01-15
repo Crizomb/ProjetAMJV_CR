@@ -10,6 +10,8 @@ public class AttackSkeleton : AttackHandler
     
     public override bool Attack()
     {
+        // If no target (target is dead an destroyed)
+        if (!_minecraftUnit.MovementHandler.TargetUnit) _minecraftUnit.MovementHandler.UpdateNearest();
         float launchAngle = findLaunchAngle();
         //print(launchAngle);
         // If target not reachable
@@ -49,7 +51,6 @@ public class AttackSkeleton : AttackHandler
         // directShot is the smallest angle, undirectShot shot is the biggest angle
         float numerator = directShot ? v_sqr - Mathf.Sqrt(inside_sqrt_root) : v_sqr + Mathf.Sqrt(inside_sqrt_root);
         float inside_arctan = numerator / (g * x);
-        print(inside_arctan);
         return Mathf.Atan(inside_arctan);
     }
 
