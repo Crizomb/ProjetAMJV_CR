@@ -24,7 +24,7 @@ public class AttackSkeleton : AttackHandler
         Vector3 diffVector = Vector3.ProjectOnPlane(targetUnit.transform.position - spawnPos.position, Vector3.up);
         
         Vector3 launchVectorNormalized = (localLaunchVector.x * diffVector.normalized + localLaunchVector.y * Vector3.up).normalized;
-        arrowHandler.LaunchArrow(launchVectorNormalized * arrowBaseSpeed);
+        arrowHandler.LaunchArrow(launchVectorNormalized * arrowBaseSpeed, _minecraftUnit.IsTeamA);
         
         return true;
     }

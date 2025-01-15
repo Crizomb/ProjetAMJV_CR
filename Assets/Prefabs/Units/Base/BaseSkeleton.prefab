@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1854268353119403178, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: distanceGoal
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2076979688870881298, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Name
       value: BaseSkeleton
@@ -171,6 +175,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 173966350544600092, guid: 22fecdb2f1d632f199be524414c444c4, type: 3}
   arrowBaseSpeed: 20
   spawnPos: {fileID: 7035766952310155559}
+  directShot: 0
 --- !u!4 &7591572713894325371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3092074377783379531, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
