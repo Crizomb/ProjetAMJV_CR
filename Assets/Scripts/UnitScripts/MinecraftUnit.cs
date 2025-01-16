@@ -1,24 +1,26 @@
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
 [DisallowMultipleComponent]
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody), typeof(HealthHandler), typeof(AttackHandler))]
+[RequireComponent(typeof(MovementHandler))]
 public class MinecraftUnit : AbstractUnit
 {
     [field: SerializeField] public Rigidbody Body { get; private set; }
     [field: SerializeField] public HealthHandler HealthHandler { get; private set; }
     [field: SerializeField] public AttackHandler AttackHandler { get; private set; }
     [field: SerializeField] public MovementHandler MovementHandler { get; private set; }
+    // Not required
+    [field: SerializeField] public Animator Animator { get; private set; }
+    
 
 
 
     void OnValidate()
     {
-        Debug.Assert(Body != null);
-        Debug.Assert(HealthHandler != null);
-        Debug.Assert(AttackHandler != null);
-        Debug.Assert(MovementHandler != null);
     }
 
     // Abstract implementation for compatibility with other team

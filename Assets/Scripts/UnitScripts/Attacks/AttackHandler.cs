@@ -56,6 +56,14 @@ public class AttackHandler : MonoBehaviour
                 MinecraftUnit minecraftTarget = (MinecraftUnit)targetUnit;
                 minecraftTarget.StartCoroutine(minecraftTarget.MovementHandler.TakeImpulse(knockbackVector));
             }
+            
+            // Attack animation
+            if (_minecraftUnit.Animator)
+            {
+                _minecraftUnit.Animator.SetTrigger("Attack");
+            }
+            
+            
         }
         return true;
     }

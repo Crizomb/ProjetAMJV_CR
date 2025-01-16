@@ -17,6 +17,12 @@ public class ArrowHandler : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody>();
     }
 
+    void Start()
+    {
+        // Destroy after 8s, in all case
+        Destroy(this.gameObject, 8.0f);
+    }
+
     void Update()
     {
         // Align with speed

@@ -12,9 +12,8 @@ public class MovementHandler : MonoBehaviour
     [SerializeField] public float speed;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform defaultMoveTarget;
-
-    private float knockbackTime = 1.2f;
-    private float noNavMeshDeadTime = 6.0f;
+    [SerializeField] private float knockbackTime = 1.2f;
+    private float _noNavMeshDeadTime = 6.0f;
 
     [HideInInspector] public AbstractUnit TargetUnit {get; private set; }
     
@@ -103,7 +102,7 @@ public class MovementHandler : MonoBehaviour
             noSurfaceTime += 0.5f;
             
             // Die if exited navMesh for to long
-            if (noSurfaceTime > noNavMeshDeadTime)
+            if (noSurfaceTime > _noNavMeshDeadTime)
             {
                 _minecraftUnit.HealthHandler.Death();
                 yield break;

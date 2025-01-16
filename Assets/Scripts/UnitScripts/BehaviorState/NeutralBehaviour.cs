@@ -13,6 +13,6 @@ public class NeutralBehaviour : AbstractBehaviour
 
     protected override void AttackAction()
     {
-        Unit.AttackHandler.Attack();
+        //Unit.AttackHandler.Attack();
     }
 }

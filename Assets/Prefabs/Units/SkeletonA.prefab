@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: cooldown
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 694975301204954681, guid: 31f097ed795257d8da1f9b48164def89, type: 3}
+      propertyPath: directShot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3646442495847485308, guid: 31f097ed795257d8da1f9b48164def89, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

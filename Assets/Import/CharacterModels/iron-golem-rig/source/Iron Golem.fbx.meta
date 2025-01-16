@@ -41,19 +41,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: irongolem_skeleton|walk (1)
-      takeName: irongolem_skeleton|walk
+      name: irongolem_skeleton|attack
+      takeName: irongolem_skeleton|attack
       internalID: -8210521561905758688
       firstFrame: 0
-      lastFrame: 42
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -162,7 +162,7 @@ ModelImporter:
     - serializedVersion: 16
       name: irongolem_skeleton|walk
       takeName: irongolem_skeleton|walk
-      internalID: 223874217054986128
+      internalID: -1770885586292802368
       firstFrame: 0
       lastFrame: 42
       wrapMode: 0
@@ -171,8 +171,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0

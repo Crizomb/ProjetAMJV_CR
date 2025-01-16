@@ -7,7 +7,7 @@ public enum DeathSate
     QueenBDead = 2,
     
 }
-
+// For compatibility with the other team units, only contains things that need to be in common
 public abstract class AbstractUnit : MonoBehaviour
 {
     public float price;

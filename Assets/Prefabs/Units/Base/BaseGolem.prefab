@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1085507300097694875, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Height
-      value: 4
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 1085507300097694875, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Radius
@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2572766376840025726, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: <Animator>k__BackingField
+      value: 
+      objectReference: {fileID: 2861011447331939094}
     - target: {fileID: 3092074377783379531, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -69,12 +73,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3230378027333185902, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8190169
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230378027333185902, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.7602
       objectReference: {fileID: 0}
     - target: {fileID: 3230378027333185902, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2260123
+      value: 1.4614067
       objectReference: {fileID: 0}
     - target: {fileID: 3230378027333185902, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -103,6 +111,10 @@ PrefabInstance:
     - target: {fileID: 5811210244409818000, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_AgentTypeID
       value: -1372625422
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587310683195830629, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: knockbackTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8213395333053285225, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: maxHealth
