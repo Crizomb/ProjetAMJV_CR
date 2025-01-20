@@ -29,4 +29,9 @@ public class MinecraftUnit : AbstractUnit
     {
         HealthHandler.TakeDamage(damage);
     }
+
+    public override void Heal(float heal)
+    {
+        HealthHandler.Heal(heal);
+    }
 }

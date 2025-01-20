@@ -11,7 +11,7 @@ public class MovementHandler : MonoBehaviour
 {
     [SerializeField] public float speed;
     [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private Transform defaultMoveTarget;
+    [SerializeField] private bool followEnemy = true;
     [SerializeField] private float knockbackTime = 1.2f;
     private float _noNavMeshDeadTime = 6.0f;
 
@@ -59,26 +59,30 @@ public class MovementHandler : MonoBehaviour
 
     public void UpdateNearest()
     {
-        TargetUnit = FindNearestEnemy();
+        TargetUnit = FindNearest(followEnemy);
     }
 
     public void MoveTowardsNearest()
     {
         MoveTowards(TargetUnit.transform.position);
     }
-
-    AbstractUnit FindNearestEnemy()
+    
+    // If findEnemy, return closest ennemy else return closest ally
+    public AbstractUnit FindNearest(bool findEnemy)
     {
-        List<AbstractUnit> enemies = _minecraftUnit.IsTeamA ? GlobalsVariable.AliveUnitsTeamB : GlobalsVariable.AliveUnitsTeamA;
+        // Funny funny double ternary operator. 
+        List<AbstractUnit> targets = findEnemy ? 
+              _minecraftUnit.IsTeamA ? GlobalsVariable.AliveUnitsTeamB : GlobalsVariable.AliveUnitsTeamA
+            : _minecraftUnit.IsTeamA ? GlobalsVariable.AliveUnitsTeamA : GlobalsVariable.AliveUnitsTeamB;
         
         AbstractUnit closestUnit = null;
         float closestDistance = float.MaxValue;
-        foreach (AbstractUnit enemy in enemies)
+        foreach (AbstractUnit target in targets)
         {
-            float distanceToEnemy = (enemy.transform.position - transform.position).sqrMagnitude;
-            if (distanceToEnemy < closestDistance)
+            float distanceToEnemy = (target.transform.position - transform.position).sqrMagnitude;
+            if (distanceToEnemy < closestDistance && target != _minecraftUnit)
             {
-                closestUnit = enemy;
+                closestUnit = target;
                 closestDistance = distanceToEnemy;
             }
         }

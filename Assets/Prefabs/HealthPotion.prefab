@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6654189472296898277}
   - component: {fileID: 4353031985084200663}
-  - component: {fileID: -9093672179699829495}
+  - component: {fileID: 6753958899723111721}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: HealthPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,6 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 432845237996938895}
+  - {fileID: 1197509880751978979}
   - {fileID: 6738264529730973941}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,7 +63,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &-9093672179699829495
+--- !u!114 &6753958899723111721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,12 +72,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 173966350544600092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36e1a3cc9e04b444cadcfe2b444d0abc, type: 3}
+  m_Script: {fileID: 11500000, guid: fd66c851299240c02a3082ade5b6295d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeSpan: 8
-  baseDamage: 10
-  baseKnockback: 5
+  healthAdd: 100
+  healthPotionEffectArea: {fileID: 1079864639964228445}
+  explodeMesh: {fileID: 173966350544600092, guid: 4a740d83829a3f11b83abbd4acadc611, type: 3}
+  exploseMeshTime: 0
 --- !u!1 &3333242642527957384
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,8 +108,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.4, z: 0.2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6654189472296898277}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -117,7 +120,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3333242642527957384}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2527533752114903105
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -141,7 +144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 862810f643f0a77dd885b30b7a1aebe0, type: 2}
+  - {fileID: 2100000, guid: ecc92429cb1b1991587a1c61d1eb871e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 432845237996938895}
-  - component: {fileID: 2881829661704008981}
+  - component: {fileID: 1079864639964228445}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -195,8 +198,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6654189472296898277}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!136 &2881829661704008981
-CapsuleCollider:
+--- !u!135 &1079864639964228445
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -213,8 +216,59 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6821885135016987577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1197509880751978979}
+  - component: {fileID: 7930232572283191225}
+  m_Layer: 0
+  m_Name: HealArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1197509880751978979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821885135016987577}
   serializedVersion: 2
-  m_Radius: 0.1
-  m_Height: 0.5
-  m_Direction: 1
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6654189472296898277}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!135 &7930232572283191225
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821885135016987577}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}

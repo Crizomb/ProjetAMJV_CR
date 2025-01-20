@@ -22,8 +22,6 @@ public class AttackHandler : MonoBehaviour
 
     void Start()
     {
-        print("coldown");
-        print(cooldown);
         InvokeRepeating(nameof(Attack), Random.Range(-cooldown*0.2f, cooldown*0.2f), cooldown);
     }
 
@@ -34,8 +32,8 @@ public class AttackHandler : MonoBehaviour
     /// </summary>
     public virtual bool Attack()
     {
-        
         Collider[] targets = DetectTargets();
+        bool hasHit = false;
         foreach (Collider target in targets)
         {
             if (!target.CompareTag("Unit")) continue;
@@ -46,6 +44,7 @@ public class AttackHandler : MonoBehaviour
             if (targetUnit.IsTeamA == _minecraftUnit.IsTeamA) continue;
             
             targetUnit.TakeDamage(damage);
+            hasHit = true;
             
             Vector3 knockbackVector = knockbackHorizontalForce * (target.transform.position - transform.position).normalized 
                                       + knockbackVerticalForce *  Vector3.up;
@@ -57,15 +56,15 @@ public class AttackHandler : MonoBehaviour
                 minecraftTarget.StartCoroutine(minecraftTarget.MovementHandler.TakeImpulse(knockbackVector));
             }
             
-            // Attack animation
-            if (_minecraftUnit.Animator)
-            {
-                _minecraftUnit.Animator.SetTrigger("Attack");
-            }
-            
             
         }
-        return true;
+        // Attack animation
+        if (_minecraftUnit.Animator && hasHit)
+        {
+            _minecraftUnit.Animator.SetTrigger("Attack");
+        }
+        
+        return hasHit;
     }
 
     private Collider[] DetectTargets()
@@ -75,7 +74,7 @@ public class AttackHandler : MonoBehaviour
         switch (attackShape)
         {
             case SphereCollider sphere:
-                hitColliders = Physics.OverlapSphere(sphere.transform.position, sphere.radius, sphere.includeLayers);
+                hitColliders = Physics.OverlapSphere(transform.position, sphere.radius, sphere.includeLayers);
                 break;
             case BoxCollider box:
                 hitColliders = Physics.OverlapBox(box.bounds.center, box.bounds.extents, box.transform.rotation, box.includeLayers);

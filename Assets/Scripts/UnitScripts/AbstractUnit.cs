@@ -15,6 +15,7 @@ public abstract class AbstractUnit : MonoBehaviour
     [field: SerializeField] public bool IsQueen { get; private set; }
     
     public abstract void TakeDamage(float damage);
+    public abstract void Heal(float heal);
     
     void Awake()
     {

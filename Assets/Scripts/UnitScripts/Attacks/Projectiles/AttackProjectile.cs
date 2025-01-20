@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AttackSkeleton : AttackHandler
+public class AttackProjectile : AttackHandler
 {
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private float arrowBaseSpeed;
@@ -18,7 +18,7 @@ public class AttackSkeleton : AttackHandler
         if (launchAngle < 0) return false;
         
         GameObject arrow = Instantiate(arrowPrefab, spawnPos.position, spawnPos.rotation);
-        ArrowHandler arrowHandler = arrow.GetComponent<ArrowHandler>();
+        ProjectileHandler projectileHandler = arrow.GetComponent<ProjectileHandler>();
         // In target <-> launcher + transform.up basis
         Vector2 localLaunchVector = arrowBaseSpeed * new Vector2(Mathf.Cos(launchAngle), Mathf.Sin(launchAngle));
         // Transform it in global basis
@@ -26,7 +26,7 @@ public class AttackSkeleton : AttackHandler
         Vector3 diffVector = Vector3.ProjectOnPlane(targetUnit.transform.position - spawnPos.position, Vector3.up);
         
         Vector3 launchVectorNormalized = (localLaunchVector.x * diffVector.normalized + localLaunchVector.y * Vector3.up).normalized;
-        arrowHandler.LaunchArrow(launchVectorNormalized * arrowBaseSpeed, _minecraftUnit.IsTeamA);
+        projectileHandler.LaunchProjectile(launchVectorNormalized * arrowBaseSpeed, _minecraftUnit.IsTeamA);
         
         return true;
     }
@@ -36,9 +36,10 @@ public class AttackSkeleton : AttackHandler
         // Source : https://en.wikipedia.org/wiki/Projectile_motion#Angle_%CE%B8_required_to_hit_coordinate_(x,_y)
         
         AbstractUnit targetUnit = _minecraftUnit.MovementHandler.TargetUnit;
-        Vector3 diffVector = Vector3.ProjectOnPlane(targetUnit.transform.position - spawnPos.position, Vector3.up);
+        Vector3 diffVector = targetUnit.transform.position - spawnPos.position;
+        Vector3 projectOnPlane = Vector3.ProjectOnPlane(diffVector, Vector3.up);
         
-        float x = Vector3.ProjectOnPlane(diffVector, Vector3.up).magnitude;
+        float x = Vector3.ProjectOnPlane(projectOnPlane, Vector3.up).magnitude;
         float y = diffVector.y;
         float g = Physics.gravity.magnitude;
         float v = arrowBaseSpeed;

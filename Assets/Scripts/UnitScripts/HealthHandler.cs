@@ -44,12 +44,12 @@ public class HealthHandler : MonoBehaviour
         armor -= armorBoost;
     }
 
-    public void Death()
+    public void Death(float delay = 0)
     {
         DeathSate deathState = _minecraftUnit.AbstractDeath();
         if (deathState == DeathSate.QueenADead) print("TEAM B WIN GG");
         if (deathState == DeathSate.QueenBDead) print("TEAM A WIN GG");
-        Destroy(gameObject);
+        Destroy(gameObject, delay);
     }
     
 }

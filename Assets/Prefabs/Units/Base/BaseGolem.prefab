@@ -20,6 +20,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2074347425566192522, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074347425566192522, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074347425566192522, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2076979688870881298, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Name
       value: BaseGolem
@@ -74,19 +86,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3230378027333185902, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.8190169
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3230378027333185902, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.7602
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3230378027333185902, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.4614067
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3230378027333185902, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.839
+      value: 2.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230378027333185902, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3280843376750909586, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Mass
@@ -113,6 +129,10 @@ PrefabInstance:
       value: -1372625422
       objectReference: {fileID: 0}
     - target: {fileID: 6587310683195830629, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587310683195830629, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: knockbackTime
       value: 0.5
       objectReference: {fileID: 0}
@@ -130,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8908285060348773052, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: knockbackVerticalForce
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8908285060348773052, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: knockbackHorizontalForce
