@@ -139,6 +139,14 @@ PrefabInstance:
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8213395333053285225, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8213395333053285225, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: <CurrentHealth>k__BackingField
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8908285060348773052, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: attackShape
       value: 

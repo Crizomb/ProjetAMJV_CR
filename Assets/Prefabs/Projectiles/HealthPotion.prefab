@@ -77,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeSpan: 8
   healthAdd: 100
-  healthPotionEffectArea: {fileID: 1079864639964228445}
+  healthPotionEffectArea: {fileID: 7930232572283191225}
   explodeMesh: {fileID: 173966350544600092, guid: 4a740d83829a3f11b83abbd4acadc611, type: 3}
   exploseMeshTime: 0
 --- !u!1 &3333242642527957384
@@ -261,14 +261,14 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Radius: 5
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}

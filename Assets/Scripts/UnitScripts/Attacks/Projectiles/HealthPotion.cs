@@ -22,7 +22,7 @@ public class HealthPotion : ProjectileHandler
             if (targetUnit.IsTeamA != FromTeamA) continue;
             
             targetUnit.Heal(healthAdd);
-            
+            _minecraftUnitOrigin.Capacity.AddMana(healthAdd);
         }
         CoroutineManager.Instance.StartCoroutine(ExplodeVisual());
         Destroy(gameObject);
