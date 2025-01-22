@@ -44,12 +44,13 @@ public class AttackHandler : MonoBehaviour
             if (targetUnit.IsTeamA == _minecraftUnit.IsTeamA) continue;
             
             targetUnit.TakeDamage(damage);
+            _minecraftUnit.Capacity.AddMana(damage);
             hasHit = true;
             
             Vector3 knockbackVector = knockbackHorizontalForce * (target.transform.position - transform.position).normalized 
                                       + knockbackVerticalForce *  Vector3.up;
             
-            // Knockback logic specific to MinecraftUnit (can't force other team to do our weird impl)
+            // logic specific if targetUnit is MinecraftUnit
             if (targetUnit is MinecraftUnit)
             {
                 MinecraftUnit minecraftTarget = (MinecraftUnit)targetUnit;

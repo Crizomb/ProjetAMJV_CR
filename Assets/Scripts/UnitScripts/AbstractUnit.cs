@@ -16,6 +16,8 @@ public abstract class AbstractUnit : MonoBehaviour
     
     public abstract void TakeDamage(float damage);
     public abstract void Heal(float heal);
+    public abstract void AddArmor(float armor);
+    public abstract void RemoveArmor(float armor);
     
     void Awake()
     {

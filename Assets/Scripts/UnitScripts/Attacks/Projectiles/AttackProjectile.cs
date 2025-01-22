@@ -26,7 +26,7 @@ public class AttackProjectile : AttackHandler
         Vector3 diffVector = Vector3.ProjectOnPlane(targetUnit.transform.position - spawnPos.position, Vector3.up);
         
         Vector3 launchVectorNormalized = (localLaunchVector.x * diffVector.normalized + localLaunchVector.y * Vector3.up).normalized;
-        projectileHandler.LaunchProjectile(launchVectorNormalized * arrowBaseSpeed, _minecraftUnit.IsTeamA);
+        projectileHandler.LaunchProjectile(launchVectorNormalized * arrowBaseSpeed, _minecraftUnit.IsTeamA, _minecraftUnit);
         
         return true;
     }

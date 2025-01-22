@@ -17,6 +17,7 @@ public class Arrow : ProjectileHandler
                 minecraftUnit.StartCoroutine(minecraftUnit.MovementHandler.TakeImpulse(knockback));
             }
             unit.TakeDamage(baseDamage);
+            _minecraftUnitOrigin.Capacity.AddMana(baseDamage);
         }
         
         Destroy(this.gameObject);
