@@ -6,6 +6,8 @@ public class WitchSummon : BaseCapacity
 
    protected override bool CapacityCall()
    {
+      print("SUMMON");
+      print(Mana);
       Instantiate(summonUnit, transform.position, Quaternion.identity);
       return true;
    }

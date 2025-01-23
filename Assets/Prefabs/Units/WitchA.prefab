@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WitchA
       objectReference: {fileID: 0}
+    - target: {fileID: 1983685764473485393, guid: 60d0116586de851dfbb6e860ae759928, type: 3}
+      propertyPath: summonUnit
+      value: 
+      objectReference: {fileID: 4976282506935113607, guid: a0750dd4706e5480da2ad597b62d8531, type: 3}
     - target: {fileID: 3402840626423002699, guid: 60d0116586de851dfbb6e860ae759928, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

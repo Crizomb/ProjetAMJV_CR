@@ -121,8 +121,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3092074377783379531, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7462635044968950075}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2076979688870881298, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3984359816722831899}
   m_SourcePrefab: {fileID: 100100000, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+--- !u!1 &1890103981188166740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2076979688870881298, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+  m_PrefabInstance: {fileID: 497671446971817030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3984359816722831899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890103981188166740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b089e9358a7b3adbe2f521fcfbc8c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MaxMana>k__BackingField: 100
+  <Mana>k__BackingField: 0
+  manaCost: 50
+  timeToBoost: 2
+  boost: 2
 --- !u!4 &3170908833992251917 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3092074377783379531, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}

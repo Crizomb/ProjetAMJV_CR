@@ -88,6 +88,10 @@ PrefabInstance:
       value: BaseSkeleton
       objectReference: {fileID: 0}
     - target: {fileID: 2572766376840025726, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: <Capacity>k__BackingField
+      value: 
+      objectReference: {fileID: -3894500519728253097}
+    - target: {fileID: 2572766376840025726, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: <AttackHandler>k__BackingField
       value: 
       objectReference: {fileID: 694975301204954681}
@@ -139,6 +143,10 @@ PrefabInstance:
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6808800326795897577, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: capacity
+      value: 
+      objectReference: {fileID: -3894500519728253097}
     - target: {fileID: 8213395333053285225, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: <MaxHealth>k__BackingField
       value: 50
@@ -155,6 +163,7 @@ PrefabInstance:
     - {fileID: 1284886913308718791, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
     - {fileID: 7841837150169133400, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
     - {fileID: 8908285060348773052, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+    - {fileID: 5894882180728040511, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
     m_RemovedGameObjects:
     - {fileID: 7673576048613581623, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
     - {fileID: 3380792937898646976, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
@@ -169,6 +178,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2076979688870881298, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 694975301204954681}
+    - targetCorrespondingSourceObject: {fileID: 2076979688870881298, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3894500519728253097}
   m_SourcePrefab: {fileID: 100100000, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
 --- !u!1 &6872779381538554402 stripped
 GameObject:
@@ -196,6 +208,21 @@ MonoBehaviour:
   arrowBaseSpeed: 20
   spawnPos: {fileID: 7035766952310155559}
   directShot: 0
+--- !u!114 &-3894500519728253097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872779381538554402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0344a53e7b8b8f30b008023599beb65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MaxMana>k__BackingField: 100
+  <Mana>k__BackingField: 0
+  manaCost: 50
 --- !u!4 &7591572713894325371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3092074377783379531, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}

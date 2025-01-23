@@ -18,7 +18,7 @@ public class BaseCapacity : MonoBehaviour
 
     public void AddMana(float manaAdd)
     {
-        Mana = Mathf.Max(Mana + manaAdd, MaxMana);
+        Mana = Mathf.Min(Mana + manaAdd, MaxMana);
     }
     
     
