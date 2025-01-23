@@ -12,6 +12,26 @@ PrefabInstance:
       propertyPath: m_Height
       value: 1.9
       objectReference: {fileID: 0}
+    - target: {fileID: 1209043989823703600, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347853180693178842, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347853180693178842, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377656129870373027, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377656129870373027, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2076979688870881298, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Name
       value: BaseZombie

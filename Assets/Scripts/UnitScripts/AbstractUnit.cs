@@ -19,7 +19,7 @@ public abstract class AbstractUnit : MonoBehaviour
     public abstract void AddArmor(float armor);
     public abstract void RemoveArmor(float armor);
     
-    void Awake()
+     protected void Awake()
     {
         
         if (IsTeamA)
