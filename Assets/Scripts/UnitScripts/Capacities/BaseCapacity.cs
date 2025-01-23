@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class BaseCapacity : MonoBehaviour
 {
     [field: SerializeField] public float MaxMana { get; private set; }
     [field: SerializeField] public float Mana { get; private set; }
-    protected float ManaCost;
+    [SerializeField] private float manaCost;
     protected AbstractUnit _unit;
 
     
@@ -30,10 +31,10 @@ public class BaseCapacity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Mana >= ManaCost)
+        if (Mana >= manaCost)
         {
             bool capacityLaunched = CapacityCall();
-            if (capacityLaunched) Mana -= ManaCost;
+            if (capacityLaunched) Mana -= manaCost;
         }
     }
 }
