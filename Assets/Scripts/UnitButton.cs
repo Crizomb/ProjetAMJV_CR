@@ -43,8 +43,7 @@ public class UnitButton : MonoBehaviour
     void PlaceUnit()
     {
         Vector3 mousePos = unitPlacement.MapPosition();
-        GameObject go = Instantiate(unitPrefab);
-        go.transform.position = mousePos;
+        GameObject go = Instantiate(unitPrefab, mousePos, Quaternion.identity);
 
     }
 

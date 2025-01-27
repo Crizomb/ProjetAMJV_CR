@@ -837,6 +837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieA
       objectReference: {fileID: 0}
+    - target: {fileID: 4976282506935113607, guid: a0750dd4706e5480da2ad597b62d8531, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5387376515481739062, guid: a0750dd4706e5480da2ad597b62d8531, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
