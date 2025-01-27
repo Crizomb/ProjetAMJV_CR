@@ -4,6 +4,9 @@ using UnityEngine;
 
 public static class GlobalsVariable
 {
+
+    public static int money=100;
+
     public static List<AbstractUnit> AliveUnitsTeamA = new List<AbstractUnit>();
     public static List<AbstractUnit> AliveUnitsTeamB = new List<AbstractUnit>();
 
@@ -18,4 +21,14 @@ public static class GlobalsVariable
             { "Sorcière",3 },
             { "Golem",8 }
         };
+
+    public static void Pay(int X)
+    {
+        money -= X;
+    }
+
+    public static void Gain(int Y) 
+    {
+        money += Y;
+    }
 }
