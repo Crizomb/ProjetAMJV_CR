@@ -59,7 +59,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5643982307560189194, guid: 1d9870263eb56a06aa2968e3d7eee3ef, type: 3}
+      - m_Target: {fileID: 1472681377386678432, guid: e06ef2ca4b6f9e4eabce443a22c76cc7, type: 3}
         m_TargetAssemblyTypeName: CameraMouvement, Assembly-CSharp
         m_MethodName: HandleCameraMovement
         m_Mode: 0
