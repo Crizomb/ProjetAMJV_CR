@@ -26,7 +26,7 @@ public class CameraMouvement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("Update");
+        //print("Update");
         var mouvement = moveSpeed * Time.deltaTime * (new Vector3(_moveInput.y, 0, -_moveInput.x));
         transform.Translate(mouvement, Space.World);
     }
