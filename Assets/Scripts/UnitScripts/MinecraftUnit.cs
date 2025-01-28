@@ -19,7 +19,11 @@ public class MinecraftUnit : AbstractUnit
 
 
 
-
+    protected override void SetQueen(bool isQueen)
+    {
+        _isQueen = isQueen;
+        transform.Find("Crown").gameObject.SetActive(true);
+    }
 
     new void Awake()
     {

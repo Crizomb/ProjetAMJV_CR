@@ -12,7 +12,20 @@ public abstract class AbstractUnit : MonoBehaviour
 {
     public float price;
     [field: SerializeField] public bool IsTeamA { get; private set; }
-    [field: SerializeField] public bool IsQueen { get; set; }
+
+    [field: SerializeField]
+    protected bool _isQueen;
+
+    public virtual bool IsQueen
+    {
+        get => _isQueen;
+        set => SetQueen(value);
+    }
+
+    protected virtual void SetQueen(bool isQueen)
+    {
+        _isQueen = isQueen;
+    }
     
     public abstract void TakeDamage(float damage);
     public abstract void Heal(float heal);

@@ -21579,6 +21579,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8643972435321148278, guid: 9afbe58abb2af8bb6b4ba51160a048a0, type: 3}
+      propertyPath: _isQueen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643972435321148278, guid: 9afbe58abb2af8bb6b4ba51160a048a0, type: 3}
       propertyPath: <IsQueen>k__BackingField
       value: 1
       objectReference: {fileID: 0}
