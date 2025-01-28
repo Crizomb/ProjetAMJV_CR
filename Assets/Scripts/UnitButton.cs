@@ -9,7 +9,7 @@ public class UnitButton : MonoBehaviour
 
 
     [SerializeField] GameObject unitPrefab;
-    [SerializeField] UnitPlacement unitPlacement;
+    [SerializeField] ShopCanvas unitPlacement;
     public event Action OnClicked, OnExit;
 
 
