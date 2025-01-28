@@ -54,13 +54,13 @@ public class HealthHandler : MonoBehaviour
         GlobalsVariable.AliveUnitsTeamB = new List<AbstractUnit>();
         GlobalsVariable.AliveUnitsTeamA = new List<AbstractUnit>();
         
-        if (deathState == DeathSate.QueenADead)
+        if (deathState == DeathSate.QueenBDead)
         {
             print("get good, reload current scene");
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
         }
 
-        if (deathState == DeathSate.QueenBDead)
+        if (deathState == DeathSate.QueenADead)
         {
             print("GG going to next scene");
             GameManager.Instance.GoNextLevel();

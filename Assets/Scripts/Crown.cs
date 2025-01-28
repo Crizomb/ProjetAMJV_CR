@@ -6,12 +6,14 @@ public class Crown : MonoBehaviour
 {
 
     public event Action OnClicked;
-    private bool crowned=false;
+    public bool crowned=false;
     [SerializeField] TextMeshProUGUI texte;
 
 
     [SerializeField] private Camera _camera;
     [SerializeField] private LayerMask placementLayer;
+
+    [SerializeField] private GameObject startButton;
 
     private void Start()
     {
@@ -40,6 +42,8 @@ public class Crown : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100, placementLayer))
         {
             OnClicked -= Crowning;
+            crowned = true;
+            startButton.SetActive(true);
             return hit.transform.gameObject;
         }
         else

@@ -7,12 +7,11 @@ using System;
 public class UnitButton : MonoBehaviour
 {
 
-    [SerializeField] private GameObject Mask;
 
     [SerializeField] GameObject unitPrefab;
     [SerializeField] UnitPlacement unitPlacement;
     public event Action OnClicked, OnExit;
-    private bool clicked;
+
 
     private int cost;
     [SerializeField] TextMeshProUGUI texteCout;
@@ -35,7 +34,6 @@ public class UnitButton : MonoBehaviour
         {
             Debug.Log("I'm *in");
             
-            //Mask.SetActive(true);
         
             OnClicked += PlaceUnit;
             OnExit += StopPlacing;
@@ -54,7 +52,6 @@ public class UnitButton : MonoBehaviour
 
     public void StopPlacing()
     {
-        //Mask.SetActive(false);
         OnClicked -= PlaceUnit;
         OnExit -= StopPlacing;
     }

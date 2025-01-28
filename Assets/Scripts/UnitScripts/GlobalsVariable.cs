@@ -18,7 +18,7 @@ public static class GlobalsVariable
             { "Zombie",1 },
             { "Squelette",2 },
             { "Creeper",3 },
-            { "Sorcière",3 },
+            { "Sorciere",3 },
             { "Golem",8 }
         };
 
