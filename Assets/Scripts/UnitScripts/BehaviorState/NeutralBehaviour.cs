@@ -1,8 +1,8 @@
+using System;
 using UnityEngine;
 
 public class NeutralBehaviour : AbstractBehaviour
 {
-    [SerializeField] private float distanceGoal = 0.0f;
     protected override void MoveAction()
     {
         if (CurrentMinecraftUnit.IsTeamA)
@@ -13,15 +13,14 @@ public class NeutralBehaviour : AbstractBehaviour
         {
             if (GlobalsVariable.AliveUnitsTeamA.Count == 0) return;
         }
-        
         CurrentMinecraftUnit.MovementHandler.UpdateNearest();
-        Vector3 targetPos = CurrentMinecraftUnit.MovementHandler.TargetUnit.transform.position;
+        AbstractUnit targetUnit = CurrentMinecraftUnit.MovementHandler.TargetUnit;
+        if (targetUnit == null)
+        {
+            return;
+        }
+        Vector3 targetPos = targetUnit.transform.position;
         Vector3 goalPos = targetPos + (transform.position - targetPos).normalized * distanceGoal;
         CurrentMinecraftUnit.MovementHandler.MoveTowards(goalPos);
-    }
-
-    protected override void AttackAction()
-    {
-        //CurrentMinecraftUnit.AttackHandler.Attack();
     }
 }

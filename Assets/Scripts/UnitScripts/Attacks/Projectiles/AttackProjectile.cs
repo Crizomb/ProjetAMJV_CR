@@ -21,7 +21,6 @@ public class AttackProjectile : AttackHandler
             {
                 if (GlobalsVariable.AliveUnitsTeamA.Count == 0) return false;
             }
-            _minecraftUnit.MovementHandler.UpdateNearest();
         }
         float launchAngle = findLaunchAngle();
         //print(launchAngle);
@@ -47,6 +46,7 @@ public class AttackProjectile : AttackHandler
         // Source : https://en.wikipedia.org/wiki/Projectile_motion#Angle_%CE%B8_required_to_hit_coordinate_(x,_y)
         
         AbstractUnit targetUnit = _minecraftUnit.MovementHandler.TargetUnit;
+        if (targetUnit == null) return -1f;
         Vector3 diffVector = targetUnit.transform.position - spawnPos.position;
         Vector3 projectOnPlane = Vector3.ProjectOnPlane(diffVector, Vector3.up);
         

@@ -49,6 +49,7 @@ public class HealthHandler : MonoBehaviour
         if (deathState == DeathSate.NotImportant)
         {
             Destroy(gameObject, delay);
+            return;
         }
         
         GlobalsVariable.AliveUnitsTeamB = new List<AbstractUnit>();

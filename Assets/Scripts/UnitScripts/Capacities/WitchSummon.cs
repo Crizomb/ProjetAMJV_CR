@@ -6,9 +6,9 @@ public class WitchSummon : BaseCapacity
 
    protected override bool CapacityCall()
    {
-      print("SUMMON");
-      print(Mana);
-      Instantiate(summonUnit, transform.position, Quaternion.identity);
+      GameObject unit = Instantiate(summonUnit, transform.position, Quaternion.identity);
+      AbstractUnit unitScript = unit.GetComponent<AbstractUnit>();
+      unitScript.StartFight();
       return true;
    }
 }

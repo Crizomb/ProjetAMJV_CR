@@ -15,7 +15,7 @@ public class MovementHandler : MonoBehaviour
     [SerializeField] private float knockbackTime = 1.2f;
     private float _noNavMeshDeadTime = 6.0f;
 
-    [HideInInspector] public AbstractUnit TargetUnit {get; private set; }
+    [HideInInspector] public AbstractUnit TargetUnit {get; set; }
     
     private MinecraftUnit _minecraftUnit;
     private Rigidbody _rigidbody;
@@ -62,24 +62,25 @@ public class MovementHandler : MonoBehaviour
         TargetUnit = FindNearest(followEnemy);
     }
 
-    public void MoveTowardsNearest()
+    public void UpdateNearestFrom(Transform transform)
     {
-        MoveTowards(TargetUnit.transform.position);
+        TargetUnit = FindNearestFromTransform(true, transform);
     }
     
+    
     // If findEnemy, return closest ennemy else return closest ally
-    public AbstractUnit FindNearest(bool findEnemy)
+    private AbstractUnit FindNearestFromTransform(bool findEnemy, Transform from)
     {
         // Funny funny double ternary operator. 
         List<AbstractUnit> targets = findEnemy ? 
-              _minecraftUnit.IsTeamA ? GlobalsVariable.AliveUnitsTeamB : GlobalsVariable.AliveUnitsTeamA
+            _minecraftUnit.IsTeamA ? GlobalsVariable.AliveUnitsTeamB : GlobalsVariable.AliveUnitsTeamA
             : _minecraftUnit.IsTeamA ? GlobalsVariable.AliveUnitsTeamA : GlobalsVariable.AliveUnitsTeamB;
         
         AbstractUnit closestUnit = null;
         float closestDistance = float.MaxValue;
         foreach (AbstractUnit target in targets)
         {
-            float distanceToEnemy = (target.transform.position - transform.position).sqrMagnitude;
+            float distanceToEnemy = (target.transform.position - from.position).sqrMagnitude;
             if (distanceToEnemy < closestDistance && target != _minecraftUnit)
             {
                 closestUnit = target;
@@ -87,7 +88,19 @@ public class MovementHandler : MonoBehaviour
             }
         }
 
+        if (closestUnit == null)
+        {
+            print("What");
+            print(targets.Count);
+            print(targets);
+        }
+
         return closestUnit;
+    }
+    
+    private AbstractUnit FindNearest(bool findEnemy)
+    {
+        return FindNearestFromTransform(findEnemy, transform);
     }
 
     public IEnumerator TakeImpulse(Vector3 impulse)
