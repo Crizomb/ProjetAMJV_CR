@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class UnitPlacement : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
-    private Vector3 lastPosition;
+    public Vector3 lastPosition;
     [SerializeField] private LayerMask placementLayer;
 
     public Vector3 MapPosition()
