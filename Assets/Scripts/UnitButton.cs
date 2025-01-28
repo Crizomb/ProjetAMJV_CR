@@ -12,6 +12,7 @@ public class UnitButton : MonoBehaviour
     [SerializeField] GameObject unitPrefab;
     [SerializeField] UnitPlacement unitPlacement;
     public event Action OnClicked, OnExit;
+    private bool clicked;
 
     private int cost;
     [SerializeField] TextMeshProUGUI texteCout;
@@ -33,10 +34,12 @@ public class UnitButton : MonoBehaviour
         else
         {
             Debug.Log("I'm *in");
-            GlobalsVariable.Pay(cost);
+            
             //Mask.SetActive(true);
+        
             OnClicked += PlaceUnit;
             OnExit += StopPlacing;
+        
         }
     }
 
@@ -44,6 +47,8 @@ public class UnitButton : MonoBehaviour
     {
         Vector3 mousePos = unitPlacement.MapPosition();
         GameObject go = Instantiate(unitPrefab, mousePos, Quaternion.identity);
+        GlobalsVariable.Pay(cost);
+        OnClicked -= PlaceUnit;
 
     }
 
