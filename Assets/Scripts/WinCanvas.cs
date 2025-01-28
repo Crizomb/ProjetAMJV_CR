@@ -1,19 +1,17 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class WinCanvas : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] TextMeshProUGUI time;
+    [SerializeField] GameObject gameUI;
+
     void Start()
     {
-        
+        time.text = gameUI.GetComponent<GameUI>().time.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void NextLevel()
     {

@@ -1,11 +1,15 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class UnitPlacement : MonoBehaviour
+public class ShopCanvas : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     public Vector3 lastPosition;
     [SerializeField] private LayerMask placementLayer;
+    [SerializeField] private LayerMask behaviorLayer;
+
+    [SerializeField] private GameObject behaviorMenu;
 
     public Vector3 MapPosition()
     {
@@ -32,5 +36,23 @@ public class UnitPlacement : MonoBehaviour
         }
 
         return lastPosition;
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = _camera.nearClipPlane;
+            Ray ray = _camera.ScreenPointToRay(mousePos);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100, behaviorLayer))
+            {
+                GameObject unite = hit.transform.GameObject();
+                behaviorMenu.SetActive(true);
+                behaviorMenu.GetComponent<BehaviorChoice>().chosenUnit = unite;
+            }
+        }
     }
 }
