@@ -31,6 +31,14 @@ public class MinecraftUnit : AbstractUnit
         if (IsQueen)
         {
             transform.Find("Crown").gameObject.SetActive(true);
+            if (IsTeamA)
+            {
+                GlobalsVariable.QueenA = this;
+            }
+            else
+            {
+                GlobalsVariable.QueenB = this;
+            }
         }
     }
 
