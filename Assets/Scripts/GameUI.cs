@@ -5,11 +5,13 @@ using UnityEngine;
 public class GameUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timer;
-    private float time;
+    public float time;
     public bool timerActive;
 
     [SerializeField] TextMeshProUGUI units;
     private int enemiesLeft;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,4 +35,6 @@ public class GameUI : MonoBehaviour
         enemiesLeft = GlobalsVariable.AliveUnitsTeamA.Count;
         units.text = "Units Left: " + enemiesLeft.ToString();
     }
+
+
 }
