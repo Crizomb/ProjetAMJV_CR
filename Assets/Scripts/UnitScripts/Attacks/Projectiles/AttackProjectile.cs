@@ -11,7 +11,18 @@ public class AttackProjectile : AttackHandler
     public override bool Attack()
     {
         // If no target (target is dead an destroyed)
-        if (!_minecraftUnit.MovementHandler.TargetUnit) _minecraftUnit.MovementHandler.UpdateNearest();
+        if (!_minecraftUnit.MovementHandler.TargetUnit)
+        {
+            if (_minecraftUnit.IsTeamA)
+            {
+                if (GlobalsVariable.AliveUnitsTeamB.Count == 0) return false;
+            }
+            else
+            {
+                if (GlobalsVariable.AliveUnitsTeamA.Count == 0) return false;
+            }
+            _minecraftUnit.MovementHandler.UpdateNearest();
+        }
         float launchAngle = findLaunchAngle();
         //print(launchAngle);
         // If target not reachable

@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(MinecraftUnit))]
 public class HealthHandler : MonoBehaviour
@@ -43,9 +45,26 @@ public class HealthHandler : MonoBehaviour
     public void Death(float delay = 0)
     {
         DeathSate deathState = _minecraftUnit.AbstractDeath();
-        if (deathState == DeathSate.QueenADead) print("TEAM B WIN GG");
-        if (deathState == DeathSate.QueenBDead) print("TEAM A WIN GG");
-        Destroy(gameObject, delay);
+
+        if (deathState == DeathSate.NotImportant)
+        {
+            Destroy(gameObject, delay);
+        }
+        
+        GlobalsVariable.AliveUnitsTeamB = new List<AbstractUnit>();
+        GlobalsVariable.AliveUnitsTeamA = new List<AbstractUnit>();
+        
+        if (deathState == DeathSate.QueenADead)
+        {
+            print("get good, reload current scene");
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        }
+
+        if (deathState == DeathSate.QueenBDead)
+        {
+            print("GG going to next scene");
+            GameManager.Instance.GoNextLevel();
+        }
     }
     
 }

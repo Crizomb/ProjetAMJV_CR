@@ -523,7 +523,7 @@ PrefabInstance:
     - target: {fileID: 1969199041552567758, guid: 6ad55a398b7989c9cbd10b7804913360, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: c6990f57c4a41e3fc83259edf4b5788c, type: 2}
+      objectReference: {fileID: 23800000, guid: 966ab30231f8849209ccf80b87cf41ec, type: 2}
     - target: {fileID: 1969199041552567758, guid: 6ad55a398b7989c9cbd10b7804913360, type: 3}
       propertyPath: m_GenerateLinks
       value: 0
@@ -535,7 +535,7 @@ PrefabInstance:
     - target: {fileID: 6778669920814834500, guid: 6ad55a398b7989c9cbd10b7804913360, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: b131d22c420e393e096e910186a08091, type: 2}
+      objectReference: {fileID: 23800000, guid: a7dd1adfee813ce63b709cb7c05b4091, type: 2}
     - target: {fileID: 6778669920814834500, guid: 6ad55a398b7989c9cbd10b7804913360, type: 3}
       propertyPath: m_GenerateLinks
       value: 0
