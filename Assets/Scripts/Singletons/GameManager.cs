@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
         // Delete, use only for Debug
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            print("OOKOKOKOKOKOK");
             StartFightForAll();
         }
     }

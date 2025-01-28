@@ -12,7 +12,6 @@ public class CameraMouvement : MonoBehaviour
         if (context.phase == InputActionPhase.Performed)
         {
             _moveInput = context.ReadValue<Vector2>();
-            print(_moveInput);
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created

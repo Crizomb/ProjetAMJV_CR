@@ -8,10 +8,9 @@ using System.Collections.Generic;
 public abstract class AbstractBehaviour : MonoBehaviour
 {
     [SerializeField] private float pathFps = 1.0f;
-    [SerializeField] private float attackFps = 5.0f;
+    [SerializeField] protected float distanceGoal = 0.0f;
     
     protected abstract void MoveAction();
-    protected abstract void AttackAction();
     
     protected MinecraftUnit CurrentMinecraftUnit;
     
@@ -19,22 +18,8 @@ public abstract class AbstractBehaviour : MonoBehaviour
     void Start()
     {
         CurrentMinecraftUnit = GetComponent<MinecraftUnit>();
-        StartCoroutine(attackUpdate());
         StartCoroutine(pathUpdate());
     }
-    
-    // Path update and attack update can be expansive, so we don't do that every frame. We create custom update
-    // We create custom update at low fps to handle this without performance issues
-
-    private IEnumerator attackUpdate()
-    {
-        while (true)
-        {
-            AttackAction();
-            yield return new WaitForSeconds(1.0f/attackFps); 
-        }
-    }
-    
     
     private IEnumerator pathUpdate()
     {

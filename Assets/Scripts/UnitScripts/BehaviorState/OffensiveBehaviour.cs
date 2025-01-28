@@ -4,11 +4,19 @@ public class OffensiveBehaviour : AbstractBehaviour
 {
     protected override void MoveAction()
     {
-        throw new System.NotImplementedException();
+        if (CurrentMinecraftUnit.IsTeamA)
+        {
+            if (GlobalsVariable.QueenB == null) return;
+        }
+        else
+        {
+            if (GlobalsVariable.QueenA == null) return;
+        }
+        
+        CurrentMinecraftUnit.MovementHandler.TargetUnit = GlobalsVariable.QueenB;
+        Vector3 targetPos = CurrentMinecraftUnit.MovementHandler.TargetUnit.transform.position;
+        Vector3 goalPos = targetPos + (transform.position - targetPos).normalized * distanceGoal;
+        CurrentMinecraftUnit.MovementHandler.MoveTowards(goalPos);
     }
-
-    protected override void AttackAction()
-    {
-        throw new System.NotImplementedException();
-    }
+    
 }
