@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoseUI : MonoBehaviour
 {
@@ -17,5 +18,15 @@ public class LoseUI : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
     }
 }
