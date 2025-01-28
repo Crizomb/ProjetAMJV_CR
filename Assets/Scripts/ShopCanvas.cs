@@ -4,12 +4,17 @@ using UnityEngine.AI;
 
 public class ShopCanvas : MonoBehaviour
 {
-    [SerializeField] private Camera _camera;
+    private Camera _camera;
     public Vector3 lastPosition;
     [SerializeField] private LayerMask placementLayer;
     [SerializeField] private LayerMask behaviorLayer;
 
     [SerializeField] private GameObject behaviorMenu;
+
+    void Start()
+    {
+        _camera = Camera.main;
+    }
 
     public Vector3 MapPosition()
     {

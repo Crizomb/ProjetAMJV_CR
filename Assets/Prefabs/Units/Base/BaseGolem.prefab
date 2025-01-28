@@ -154,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6587310683195830629, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: knockbackTime
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7323465142549462881, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_AnchoredPosition.y

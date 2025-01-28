@@ -8,16 +8,15 @@ public class Crown : MonoBehaviour
     public event Action OnClicked;
     public bool crowned=false;
     [SerializeField] TextMeshProUGUI texte;
-
-
-    [SerializeField] private Camera _camera;
     [SerializeField] private LayerMask placementLayer;
 
     [SerializeField] private GameObject startButton;
+    private Camera _camera;
 
     private void Start()
     {
         texte.enabled = false;
+        _camera = Camera.main;
     }
 
     public void StartCrown()

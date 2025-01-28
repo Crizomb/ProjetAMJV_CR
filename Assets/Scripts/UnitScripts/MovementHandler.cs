@@ -13,7 +13,7 @@ public class MovementHandler : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private bool followEnemy = true;
     [SerializeField] private float knockbackTime = 1.2f;
-    private float _noNavMeshDeadTime = 6.0f;
+    [SerializeField] private float _noNavMeshDeadTime = 3.0f;
 
     [HideInInspector] public AbstractUnit TargetUnit {get; set; }
     

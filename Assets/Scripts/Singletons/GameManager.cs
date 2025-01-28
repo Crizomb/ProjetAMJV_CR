@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
 {
     [SerializeField] private List<string> levelNames;
+    [SerializeField] private List<string> levelMusics;
     [SerializeField] private List<int> levelsMoney;
     int current_level = -1;
 
@@ -18,7 +19,6 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
             current_level++;
             SetGlobals(current_level);
             SceneManager.LoadScene(levelNames[current_level]);
+            SoundManager.Instance.PlayMusic(levelMusics[current_level]);
         }
 
         throw new Exception("Bro there is no next level like stop pls");

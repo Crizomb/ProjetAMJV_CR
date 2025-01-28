@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectsSource: {fileID: 5412373041479583195}
   MusicSource: {fileID: 6398205375808577097}
+  SoundsList: []
 --- !u!114 &4500885157334573855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +68,16 @@ MonoBehaviour:
   - 2_Plaza
   - 3_Flat
   - 4_NotVillage
+  levelMusics:
+  - cat
+  - fallen
+  - pigstep
+  - sweden
+  - revenge
   levelsMoney: 0f0000001e000000320000006400000096000000
+  GameUI: {fileID: 0}
+  LoseUI: {fileID: 0}
+  WinUI: {fileID: 0}
 --- !u!1 &7552951648969690334
 GameObject:
   m_ObjectHideFlags: 0
