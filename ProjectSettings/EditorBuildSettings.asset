@@ -6,19 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/BasedScenes/LevelsTest/0_Steeve.unity
+    path: Assets/Scenes/LevelsTest/0_Steeve.unity
     guid: 2c3403c1fdb8d1dcf9b520e66841c95b
   - enabled: 1
-    path: Assets/BasedScenes/LevelsTest/1_Pumpkin.unity
+    path: Assets/Scenes/LevelsTest/1_Pumpkin.unity
     guid: f19979b02b35fb34590aaabf38c7fb96
   - enabled: 1
-    path: Assets/BasedScenes/LevelsTest/2_Plaza.unity
+    path: Assets/Scenes/LevelsTest/2_Plaza.unity
     guid: 9f44655af04ade9ada0953441ebb0652
   - enabled: 1
-    path: Assets/BasedScenes/LevelsTest/3_Flat.unity
+    path: Assets/Scenes/LevelsTest/3_Flat.unity
     guid: e2d5ca4e4affa49adb640c2abb1bb2e6
   - enabled: 1
-    path: Assets/BasedScenes/LevelsTest/4_NotVillageButFine.unity
+    path: Assets/Scenes/LevelsTest/4_NotVillageButFine.unity
     guid: bcebc0c8b4fd6cafb970b4449a251d75
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
