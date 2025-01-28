@@ -13,12 +13,12 @@ public abstract class AbstractBehaviour : MonoBehaviour
     protected abstract void MoveAction();
     protected abstract void AttackAction();
     
-    protected MinecraftUnit Unit;
+    protected MinecraftUnit CurrentMinecraftUnit;
     
 
     void Start()
     {
-        Unit = GetComponent<MinecraftUnit>();
+        CurrentMinecraftUnit = GetComponent<MinecraftUnit>();
         StartCoroutine(attackUpdate());
         StartCoroutine(pathUpdate());
     }

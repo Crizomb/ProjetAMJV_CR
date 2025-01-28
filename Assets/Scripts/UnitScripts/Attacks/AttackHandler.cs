@@ -50,7 +50,7 @@ public class AttackHandler : MonoBehaviour
             Vector3 knockbackVector = knockbackHorizontalForce * (target.transform.position - transform.position).normalized 
                                       + knockbackVerticalForce *  Vector3.up;
             
-            // logic specific if targetUnit is MinecraftUnit
+            // logic specific if targetUnit is Unit
             if (targetUnit is MinecraftUnit)
             {
                 MinecraftUnit minecraftTarget = (MinecraftUnit)targetUnit;

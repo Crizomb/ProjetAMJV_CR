@@ -12,7 +12,7 @@ public class GolemDefense : BaseCapacity
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, buffArea.radius, buffArea.includeLayers);
         foreach (Collider target in hitColliders)
         {
-            if (!target.CompareTag("Unit")) continue;
+            if (!target.CompareTag("CurrentMinecraftUnit")) continue;
             AbstractUnit targetUnit = target.GetComponent<AbstractUnit>();
             if (targetUnit.IsTeamA == _unit.IsTeamA)
             {

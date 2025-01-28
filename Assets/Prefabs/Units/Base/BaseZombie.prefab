@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1854268353119403178, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2076979688870881298, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Name
@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2572766376840025726, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3092074377783379531, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -114,7 +114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5811210244409818000, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5811210244409818000, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_AngularSpeed
@@ -126,15 +126,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5894882180728040511, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6587310683195830629, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8213395333053285225, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8213395333053285225, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: <Armor>k__BackingField
@@ -150,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8908285060348773052, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7841837150169133400, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890103981188166740}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3b089e9358a7b3adbe2f521fcfbc8c2, type: 3}
   m_Name: 
