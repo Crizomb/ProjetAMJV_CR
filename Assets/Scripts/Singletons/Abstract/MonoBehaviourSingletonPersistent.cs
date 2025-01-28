@@ -10,7 +10,7 @@ public class MonoBehaviourSingletonPersistent<T> : MonoBehaviour
         if (Instance == null) {
             Instance = this as T;
             Instance.name = typeof(T).Name;
-            DontDestroyOnLoad (this);
+            DontDestroyOnLoad (gameObject);
         } else {
             Destroy (gameObject);
         }

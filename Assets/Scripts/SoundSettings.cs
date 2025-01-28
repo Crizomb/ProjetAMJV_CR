@@ -1,17 +1,17 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SoundSettings : MonoBehaviour
 {
-    [HideInInspector] public AudioSource source;
-    public AudioClip clip;
-    public string clipname;
-    public bool isLoop;
-    public bool playOnAwake;
 
     [SerializeField] Slider slider;
-    [SerializeField] AudioMixer audioMixer;
+
+    private void Start()
+    {
+        SoundManager.Instance.PlayMusic("wait");
+    }
 
     public void SetVolume(float value)
     {
@@ -20,8 +20,7 @@ public class SoundSettings : MonoBehaviour
             value = 0.01f;
         }
         RefreshSlider(value);
-        PlayerPrefs.SetFloat("Saved Maseter Volume", value);
-        audioMixer.SetFloat("Master Volume", Mathf.Log10(value / 100) * 20f);
+        SoundManager.Instance.MusicSource.volume = value;
     }
 
     public void SetVolumeFromSlider()

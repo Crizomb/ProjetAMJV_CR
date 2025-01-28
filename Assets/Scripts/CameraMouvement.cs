@@ -22,7 +22,15 @@ public class CameraMouvement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var mouvement = moveSpeed * Time.deltaTime * (new Vector3(_moveInput.y, 0, -_moveInput.x));
-        transform.Translate(transform.TransformVector(mouvement), Space.World);
+        var mouvement = (new Vector3(_moveInput.x, 0, _moveInput.y));
+        var worldSpaceMouvement = transform.TransformVector(mouvement);
+        var realMovement = Vector3.ProjectOnPlane(worldSpaceMouvement, Vector3.up);
+        
+        if (Input.GetAxis("Mouse ScrollWheel") != 0.0)
+        {
+            realMovement += Input.GetAxis("Mouse ScrollWheel") * 20.0f * transform.forward;
+        }
+        
+        transform.Translate(moveSpeed*Time.deltaTime*realMovement, Space.World);
     }
 }

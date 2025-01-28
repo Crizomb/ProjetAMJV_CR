@@ -17,7 +17,7 @@ public class Buttons : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Start Scene");
+        GameManager.Instance.GoNextLevel();
     }
 
     public void LaunchSettings()

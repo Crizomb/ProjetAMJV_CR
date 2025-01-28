@@ -3,9 +3,14 @@ using UnityEngine.AI;
 
 public class UnitPlacement : MonoBehaviour
 {
-    [SerializeField] private Camera _camera;
+    private Camera _camera;
     public Vector3 lastPosition;
     [SerializeField] private LayerMask placementLayer;
+
+    void Start()
+    {
+        _camera = Camera.main;
+    }
 
     public Vector3 MapPosition()
     {
