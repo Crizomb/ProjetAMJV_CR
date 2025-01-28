@@ -9,6 +9,12 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
     [SerializeField] private List<string> levelNames;
     [SerializeField] private List<int> levelsMoney;
     int current_level = -1;
+
+    [SerializeField] GameObject GameUI;
+    [SerializeField] GameObject LoseUI;
+    [SerializeField] GameObject WinUI;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -61,6 +67,13 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
 
         throw new Exception("Bro there is no next level like stop pls");
 
+    }
+
+    public void Losing()
+    {
+
+        LoseUI.SetActive(true);
+        this.enabled = false;
     }
 
 }
