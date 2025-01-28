@@ -51,5 +51,23 @@ public class MinecraftUnit : AbstractUnit
     {
         HealthHandler.RemoveArmor(armor);
     }
+
+    public override void StartFight()
+    {
+        Component[] components = GetComponents<Component>();
+
+        foreach (Component component in components)
+        {
+            if (component is MonoBehaviour monoBehaviour)
+            {
+                monoBehaviour.enabled = true;
+            }
+
+            if (component is NavMeshAgent agent)
+            {
+                agent.enabled = true;
+            }
+        }
+    }
     
 }
