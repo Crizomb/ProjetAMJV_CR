@@ -268,6 +268,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7444322309943002451, guid: e0cd2add4bbdcf59a8c46048ba422a58, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2094749810}
+    - target: {fileID: 7444322309943002451, guid: e0cd2add4bbdcf59a8c46048ba422a58, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HandleCameraMovement
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -691,6 +699,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6879188814390164746, guid: e2eadb5c4fdf45ea995b4da7c9110275, type: 3}
+      propertyPath: _isQueen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879188814390164746, guid: e2eadb5c4fdf45ea995b4da7c9110275, type: 3}
       propertyPath: <IsQueen>k__BackingField
       value: 1
       objectReference: {fileID: 0}
@@ -898,6 +910,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8820838586788899307, guid: a0750dd4706e5480da2ad597b62d8531, type: 3}
+      propertyPath: _isQueen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820838586788899307, guid: a0750dd4706e5480da2ad597b62d8531, type: 3}
       propertyPath: <IsQueen>k__BackingField
       value: 1
       objectReference: {fileID: 0}
@@ -967,6 +983,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e06ef2ca4b6f9e4eabce443a22c76cc7, type: 3}
+--- !u!114 &2094749810 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1472681377386678432, guid: e06ef2ca4b6f9e4eabce443a22c76cc7, type: 3}
+  m_PrefabInstance: {fileID: 2094749809}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f894d8f1147824dca47609a059e3c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

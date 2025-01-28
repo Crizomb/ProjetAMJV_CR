@@ -23,6 +23,6 @@ public class CameraMouvement : MonoBehaviour
     void Update()
     {
         var mouvement = moveSpeed * Time.deltaTime * (new Vector3(_moveInput.y, 0, -_moveInput.x));
-        transform.Translate(mouvement, Space.World);
+        transform.Translate(transform.TransformVector(mouvement), Space.World);
     }
 }

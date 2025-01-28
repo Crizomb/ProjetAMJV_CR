@@ -168,6 +168,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6879188814390164746, guid: e2eadb5c4fdf45ea995b4da7c9110275, type: 3}
+      propertyPath: _isQueen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879188814390164746, guid: e2eadb5c4fdf45ea995b4da7c9110275, type: 3}
       propertyPath: <IsQueen>k__BackingField
       value: 1
       objectReference: {fileID: 0}
@@ -606,6 +610,10 @@ PrefabInstance:
     - target: {fileID: 8301512717716404702, guid: a0750dd4706e5480da2ad597b62d8531, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820838586788899307, guid: a0750dd4706e5480da2ad597b62d8531, type: 3}
+      propertyPath: _isQueen
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8820838586788899307, guid: a0750dd4706e5480da2ad597b62d8531, type: 3}
       propertyPath: <IsQueen>k__BackingField

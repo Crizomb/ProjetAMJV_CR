@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
 {
     [SerializeField] private List<string> levelNames;
-    
-    int current_level = 0;
+    [SerializeField] private List<int> levelsMoney;
+    int current_level = -1;
 
     [SerializeField] GameObject GameUI;
     [SerializeField] GameObject LoseUI;
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GoNextLevel();
     }
 
     // Update is called once per frame
@@ -39,15 +39,30 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
             unit.StartFight();
         }
     }
-    
+
+    private void SetGlobals(int current_level)
+    {
+        GlobalsVariable.AliveUnitsTeamB = new List<AbstractUnit>();
+        GlobalsVariable.AliveUnitsTeamA = new List<AbstractUnit>();
+        GlobalsVariable.QueenA = null;
+        GlobalsVariable.QueenB = null;
+        GlobalsVariable.money = levelsMoney[current_level];
+    }
+
+    public void ReloadLevel()
+    {
+        print("get good, reload current scene");
+        SetGlobals(current_level);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+    }
 
     public void GoNextLevel()
     {
         if (current_level < levelNames.Count)
         {
             current_level++;
+            SetGlobals(current_level);
             SceneManager.LoadScene(levelNames[current_level]);
-            return;
         }
 
         throw new Exception("Bro there is no next level like stop pls");
