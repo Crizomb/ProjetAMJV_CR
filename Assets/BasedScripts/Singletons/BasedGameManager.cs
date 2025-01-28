@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
+public class BasedGameManager : MonoBehaviourSingletonPersistent<BasedGameManager>
 {
     [SerializeField] private List<string> levelNames;
     [SerializeField] private List<string> levelMusics;
