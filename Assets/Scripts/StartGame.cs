@@ -8,7 +8,7 @@ public class StartGame : MonoBehaviour
 
     public void Starting()
     {
-        BasedGameManager.Instance.StartFightForAll();
+        GameManager.Instance.StartFightForAll();
         GameUI.SetActive(true);
         GameUI.GetComponent<GameUI>().timerActive = true;
         ShopUI.SetActive(false);

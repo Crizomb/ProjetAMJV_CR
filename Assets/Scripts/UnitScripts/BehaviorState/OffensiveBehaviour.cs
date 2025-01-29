@@ -13,7 +13,7 @@ public class OffensiveBehaviour : AbstractBehaviour
             if (GlobalsVariable.QueenA == null) return;
         }
         
-        CurrentMinecraftUnit.MovementHandler.TargetUnit = GlobalsVariable.QueenB;
+        CurrentMinecraftUnit.MovementHandler.TargetUnit = CurrentMinecraftUnit.IsTeamA ? GlobalsVariable.QueenB : GlobalsVariable.QueenA;
         Vector3 targetPos = CurrentMinecraftUnit.MovementHandler.TargetUnit.transform.position;
         Vector3 goalPos = targetPos + (transform.position - targetPos).normalized * distanceGoal;
         CurrentMinecraftUnit.MovementHandler.MoveTowards(goalPos);

@@ -3,17 +3,14 @@ using UnityEngine.AI;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class BaseDuckScript : MonoBehaviour
+public class BaseDuckScript : AbstractUnit
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private bool isEnemy = true;
-    [SerializeField] public bool hasCrown = false;
-    [SerializeField] GameObject armyManagerEntity;
-    [SerializeField] GameObject gameManagerEntity;
-    private ArmyManager armyManagerScript;
-    private GameManager gameManagerScript;
+    
     [SerializeField] GameObject crownPrefab;
     [SerializeField] private int attackMode = 0; //0 do Nothing, 1 offense, 2 Neutre, 3 Défense
+    
     NavMeshAgent agent;
     private Rigidbody duckRB;
     Vector3 destination;
@@ -38,16 +35,10 @@ public class BaseDuckScript : MonoBehaviour
     void Start()
     {
         health = baseHealth;
-        armyManagerScript = armyManagerEntity.GetComponent<ArmyManager>();
-        gameManagerScript = gameManagerEntity.GetComponent<GameManager>();
-        armyManagerScript.addTroopToArmy(isEnemy, gameObject);
+        
         agent = GetComponent<NavMeshAgent>();
         duckRB = gameObject.GetComponent<Rigidbody>();
         healthCanvasRect = healthCanvas.GetComponent<RectTransform>();
-        
-        if (hasCrown){
-            becomeCrownDuck();
-        }
         
         DuckHeight = transform.Find("TigeUI").GetComponent<Renderer>().bounds.size.y;
         allGroundLayers = LayerMask.GetMask("Dirt") | LayerMask.GetMask("Sand");
@@ -62,8 +53,7 @@ public class BaseDuckScript : MonoBehaviour
             transform.LookAt(GetComponent<AttackCAC>().GetTarget().transform);
         }
 
-
-        if (gameManagerScript.combatPhase)
+        if (GameManager.Instance.fightStarted)
         {
             updateMovement();
         }
@@ -118,48 +108,10 @@ public class BaseDuckScript : MonoBehaviour
     public void updateMovement()
     {
         duckRB.isKinematic = false;
-        if (attackMode == 1 && armyManagerScript.getCrownDuck(!isEnemy))
+        if (attackMode == 1 && ArmyManager.getCrownDuck(!isEnemy))
         {
-            destination = armyManagerScript.getCrownDuck(!isEnemy).transform.position;
+            destination = ArmyManager.getCrownDuck(!isEnemy).transform.position;
             agent.destination = destination;
-        }
-
-        if (attackMode == 2)
-        {
-            List<GameObject> opposingArmy = armyManagerScript.getArmy(!isEnemy);
-            if (opposingArmy.Count > 0){
-                GameObject closestOpponent = opposingArmy[0];
-                float closestDistance = Vector3.Distance(opposingArmy[0].transform.position, transform.position);
-                foreach (GameObject opposingDuck in opposingArmy)
-                {
-                    if (Vector3.Distance(opposingDuck.transform.position, transform.position) < closestDistance)
-                    {
-                        closestOpponent = opposingDuck;
-                        closestDistance = Vector3.Distance(opposingDuck.transform.position, transform.position);
-                    }
-                }
-                destination = closestOpponent.transform.position;
-                agent.destination = destination;
-            }
-        }
-
-        if (attackMode == 3)
-        {
-            List<GameObject> opposingArmy = armyManagerScript.getArmy(!isEnemy);
-            if (opposingArmy.Count > 0){
-                GameObject closestOpponent = opposingArmy[0];
-                float closestDistance = Vector3.Distance(opposingArmy[0].transform.position, armyManagerScript.getCrownDuck(isEnemy).transform.position);
-                foreach (GameObject opposingDuck in opposingArmy)
-                {
-                    if (Vector3.Distance(opposingDuck.transform.position, armyManagerScript.getCrownDuck(isEnemy).transform.position) < closestDistance)
-                    {
-                        closestOpponent = opposingDuck;
-                        closestDistance = Vector3.Distance(opposingDuck.transform.position, armyManagerScript.getCrownDuck(isEnemy).transform.position);
-                    }
-                }
-                destination = closestOpponent.transform.position;
-                agent.destination = destination;
-            }
         }
     }
 
@@ -167,46 +119,9 @@ public class BaseDuckScript : MonoBehaviour
         isEnemy = isOnEnemyTeam;
     }
 
-    public void giveCrown(){
-        hasCrown = true;
-    }
-
-    public void setArmyManager(GameObject armyManagerEntity)
-    {
-        this.armyManagerEntity = armyManagerEntity;
-    }
-
-    public ArmyManager getArmyManagerScript()
-    {
-        return armyManagerScript;
-    }
-    public void setGameManager(GameObject gameManagerEntity)
-    {
-        this.gameManagerEntity = gameManagerEntity;
-    }
-
-    public void becomeCrownDuck()
-    {
-        hasCrown = true;
-        armyManagerScript.setCrownDuck(isEnemy, gameObject);
-        crown = Instantiate(crownPrefab, this.transform);
-    }
-    
-    public void loseMyCrown()
-    {
-        hasCrown = false;
-        armyManagerScript.removeCrownDuck(isEnemy);
-        Destroy(crown);
-    }
-
     public void despawn()
     {
-        if (hasCrown)
-        {
-            armyManagerScript.removeCrownDuck(isEnemy);
-        }
-        armyManagerScript.removeTroopFromArmy(isEnemy, gameObject);
-        gameManagerScript.refundCoins(cost);
+      
         Destroy(gameObject);
     }
     
@@ -228,7 +143,7 @@ public class BaseDuckScript : MonoBehaviour
         */
     }
 
-    public void TakeDamage(float damage)
+    public override void TakeDamage(float damage)
     {
         float damageReallyTaken = Mathf.Max(0, damage - armor);
         health -= damageReallyTaken;
@@ -239,11 +154,27 @@ public class BaseDuckScript : MonoBehaviour
         }
     }
     
-    public void Heal(float value)
+    public override void Heal(float value)
     {
         health += value;
         health = (health > baseHealth) ? baseHealth : health;
     }
+
+    public override void AddArmor(float armor)
+    {
+        // Nothing
+    }
+
+    public override void RemoveArmor(float armor)
+    {
+        // Nothing
+    }
+
+    public override void StartFight()
+    {
+        // Nothing
+    }
+    
 
     public float getHealth()
     {
@@ -257,7 +188,6 @@ public class BaseDuckScript : MonoBehaviour
     private void die()
     {
         Destroy(healthBar);
-        armyManagerScript.kill(isEnemy, gameObject, hasCrown);
         Destroy(gameObject);
     }
 
@@ -286,8 +216,4 @@ public class BaseDuckScript : MonoBehaviour
         this.healthCanvas = healthCanvas;
     }
 
-    public GameManager getGameManagerScript()
-    {
-        return(gameManagerScript);
-    }
 }

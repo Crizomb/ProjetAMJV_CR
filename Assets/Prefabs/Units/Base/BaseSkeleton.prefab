@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1854268353119403178, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: distanceGoal
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2076979688870881298, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: m_Name
@@ -149,11 +149,11 @@ PrefabInstance:
       objectReference: {fileID: -3894500519728253097}
     - target: {fileID: 8213395333053285225, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: <MaxHealth>k__BackingField
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8213395333053285225, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: <CurrentHealth>k__BackingField
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8908285060348773052, guid: 8094e6afe32f290e6987d6a2fc43119d, type: 3}
       propertyPath: attackShape

@@ -5,16 +5,18 @@ using UnityEngine.SceneManagement;
 public class WinCanvas : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI time;
-    [SerializeField] GameObject gameUI;
+    private GameUI gameUI;
 
     void Start()
     {
+        gameUI = GameObject.FindWithTag("GameUI").GetComponent<GameUI>();
         time.text = gameUI.GetComponent<GameUI>().time.ToString();
     }
 
 
     public void NextLevel()
     {
+        GameManager.Instance.GoNextLevel();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

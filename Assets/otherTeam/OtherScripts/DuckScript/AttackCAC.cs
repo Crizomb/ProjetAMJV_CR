@@ -43,7 +43,7 @@ public class AttackCAC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (baseDuckScript.getGameManagerScript().combatPhase)
+        if (GameManager.Instance.fightStarted)
         {
             if (canAttack)
             {
@@ -55,31 +55,17 @@ public class AttackCAC : MonoBehaviour
                 {
                     Vector3 directionToTarget = hit.transform.position - transform.position;
                     float distanceToTarget = directionToTarget.magnitude;
-                    if (baseDuckScript.getAttackMode() == 3)
-                    {
-                        distanceToTarget = Vector3.Distance(baseDuckScript.getArmyManagerScript().getCrownDuck(baseDuckScript.getTeam()).transform.position, hit.transform.position);
-                    }
 
                     if (!Physics.Raycast(transform.position, directionToTarget.normalized, distanceToTarget,
                             wallLayer))
                     {
-                        if (baseDuckScript.getArmyManagerScript().getArmy(!baseDuckScript.getTeam()).Contains(hit.gameObject))
+                        if (ArmyManager.getArmy(!baseDuckScript.getTeam()).Contains(hit.GetComponent<AbstractUnit>()))
                         {
                             if (baseDuckScript.getAttackMode() == 1)
                             {
-                                if (baseDuckScript.getArmyManagerScript().getCrownDuck(!baseDuckScript.getTeam()) ==
+                                if (ArmyManager.getCrownDuck(!baseDuckScript.getTeam()) ==
                                     hit.gameObject)
                                 {
-                                    targetToAttack = hit.gameObject;
-                                    targetFound = true;
-                                }
-                            }
-
-                            if (baseDuckScript.getAttackMode() == 2 || baseDuckScript.getAttackMode() == 3)
-                            {
-                                if (distanceToTarget < distanceToChosenTarget)
-                                {
-                                    distanceToChosenTarget = distanceToTarget;
                                     targetToAttack = hit.gameObject;
                                     targetFound = true;
                                 }
@@ -104,8 +90,8 @@ public class AttackCAC : MonoBehaviour
     private void AttackC(GameObject targetToAttack)
     {
         StartCoroutine(coolDown());
-        targetToAttack.GetComponent<BaseDuckScript>().TakeDamage(damage);
-        Debug.Log("Corps à corps");
+        targetToAttack.GetComponent<AbstractUnit>().TakeDamage(damage);
+        Debug.Log("Corps ï¿½ corps");
         ATTACK.Invoke();
     }
 

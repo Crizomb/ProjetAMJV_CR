@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 694975301204954681, guid: 31f097ed795257d8da1f9b48164def89, type: 3}
       propertyPath: directShot
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3646442495847485308, guid: 31f097ed795257d8da1f9b48164def89, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3f2019db81a04f662aef4921a814266f, type: 2}
     - target: {fileID: 6487507096035890842, guid: 31f097ed795257d8da1f9b48164def89, type: 3}
       propertyPath: distanceGoal
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6872779381538554402, guid: 31f097ed795257d8da1f9b48164def89, type: 3}
       propertyPath: m_Name

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Unit
+  - GameUI
+  - LosingUI
+  - WinningUI
   layers:
   - Default
   - TransparentFX

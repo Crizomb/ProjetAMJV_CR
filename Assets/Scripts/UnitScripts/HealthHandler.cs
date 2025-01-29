@@ -55,13 +55,13 @@ public class HealthHandler : MonoBehaviour
         if (deathState == DeathSate.QueenBDead)
         {
             print("get good, reload current scene");
-            BasedGameManager.Instance.ReloadLevel();
+            GameManager.Instance.ReloadLevel();
         }
 
         if (deathState == DeathSate.QueenADead)
         {
             print("GG going to next scene");
-            BasedGameManager.Instance.GoNextLevel();
+            GameManager.Instance.GoNextLevel();
         }
     }
     

@@ -4,33 +4,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BasedGameManager : MonoBehaviourSingletonPersistent<BasedGameManager>
+public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
 {
     [SerializeField] private List<string> levelNames;
     [SerializeField] private List<string> levelMusics;
     [SerializeField] private List<int> levelsMoney;
-    int current_level = -1;
+    int current_level = 0;
 
-    [SerializeField] GameObject GameUI;
-    [SerializeField] GameObject LoseUI;
-    [SerializeField] GameObject WinUI;
+    GameObject _gameUI;
+    GameObject _loseUI;
+    GameObject _winUI;
+    
+    // for compativility with other team
+    public bool fightStarted = false;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Update()
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Delete, use only for Debug
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartFightForAll();
+            GoNextLevel();
         }
     }
-    
+
+
     public void StartFightForAll()
     {
         AbstractUnit[] units = FindObjectsByType<AbstractUnit>(FindObjectsSortMode.None);
@@ -38,6 +34,7 @@ public class BasedGameManager : MonoBehaviourSingletonPersistent<BasedGameManage
         {
             unit.StartFight();
         }
+        fightStarted = true;
     }
 
     private void SetGlobals(int current_level)
@@ -47,6 +44,8 @@ public class BasedGameManager : MonoBehaviourSingletonPersistent<BasedGameManage
         GlobalsVariable.QueenA = null;
         GlobalsVariable.QueenB = null;
         GlobalsVariable.money = levelsMoney[current_level];
+        fightStarted = false;
+
     }
 
     public void ReloadLevel()
@@ -58,23 +57,19 @@ public class BasedGameManager : MonoBehaviourSingletonPersistent<BasedGameManage
 
     public void GoNextLevel()
     {
-        if (current_level < levelNames.Count)
+        if (current_level <= levelNames.Count)
         {
             current_level++;
-            SetGlobals(current_level);
-            SceneManager.LoadScene(levelNames[current_level]);
-            SoundManager.Instance.PlayMusic(levelMusics[current_level]);
+        }
+        else
+        {
+            current_level = 0;
         }
 
-        throw new Exception("Bro there is no next level like stop pls");
+        SetGlobals(current_level);
+        SceneManager.LoadScene(levelNames[current_level]);
+        SoundManager.Instance.PlayMusic(levelMusics[current_level]);
 
-    }
-
-    public void Losing()
-    {
-
-        LoseUI.SetActive(true);
-        this.enabled = false;
     }
 
 }

@@ -17,7 +17,7 @@ public class Buttons : MonoBehaviour
 
     public void PlayGame()
     {
-        BasedGameManager.Instance.GoNextLevel();
+        GameManager.Instance.GoNextLevel();
     }
 
     public void LaunchSettings()
