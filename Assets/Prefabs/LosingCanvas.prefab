@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 3125938197174985513}
   m_Layer: 5
   m_Name: LosingCanvas
-  m_TagString: LosingUI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4456780033352153238
 RectTransform:
   m_ObjectHideFlags: 0
@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5393cb13d8a7330418334d35a76e6da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameUI: {fileID: 0}
   time: {fileID: 5539803304764880128}
 --- !u!1 &2330334162970283666
 GameObject:

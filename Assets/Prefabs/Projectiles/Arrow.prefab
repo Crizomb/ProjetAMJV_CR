@@ -76,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeSpan: 8
   baseDamage: 10
-  baseKnockback: 3
+  baseKnockback: 5
 --- !u!1 &3333242642527957384
 GameObject:
   m_ObjectHideFlags: 0

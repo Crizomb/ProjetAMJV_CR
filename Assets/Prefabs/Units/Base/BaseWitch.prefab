@@ -174,14 +174,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  cooldown: 3
+  cooldown: 1
   attackShape: {fileID: 0}
   knockbackHorizontalForce: 0
   knockbackVerticalForce: 0
   arrowPrefab: {fileID: 173966350544600092, guid: c7eca518d1c1db450b901d7d30f20d61, type: 3}
-  arrowBaseSpeed: 8
+  arrowBaseSpeed: 10
   spawnPos: {fileID: 5966639341884708145}
-  directShot: 0
+  directShot: 1
 --- !u!114 &1983685764473485393
 MonoBehaviour:
   m_ObjectHideFlags: 0

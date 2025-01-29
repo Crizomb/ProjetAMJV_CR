@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeSpan: 8
-  healthAdd: 50
+  healthAdd: 100
   healthPotionEffectArea: {fileID: 7930232572283191225}
   explodeMesh: {fileID: 173966350544600092, guid: 4a740d83829a3f11b83abbd4acadc611, type: 3}
   exploseMeshTime: 0

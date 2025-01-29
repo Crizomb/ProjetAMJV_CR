@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 4449522672392171314}
   m_Layer: 5
   m_Name: GameUI
-  m_TagString: GameUI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6852038795024868816
 RectTransform:
   m_ObjectHideFlags: 0
@@ -117,7 +117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 4056475341805437710}
-  time: 0
   timerActive: 0
   units: {fileID: 3325753247337786379}
 --- !u!1 &1867498029930653014

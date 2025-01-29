@@ -16,8 +16,6 @@ public class MinecraftUnit : AbstractUnit
     [field: SerializeField] public BaseCapacity Capacity { get; private set; }
     // Not required
     [field: SerializeField] public Animator Animator { get; private set; }
-    
-    public bool isActive { get; private set; }
 
 
 
@@ -68,7 +66,6 @@ public class MinecraftUnit : AbstractUnit
 
     public override void StartFight()
     {
-        isActive = true;
         Component[] components = GetComponents<Component>();
 
         foreach (Component component in components)
