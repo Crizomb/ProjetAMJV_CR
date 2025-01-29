@@ -6,12 +6,12 @@ public class DefensiveBehaviour : AbstractBehaviour
     {
         if (CurrentMinecraftUnit.IsTeamA)
         {
-            if (GlobalsVariable.AliveUnitsTeamB.Count == 0) return;
+            if (GlobalsVariable.QueenA != null) return;
             CurrentMinecraftUnit.MovementHandler.UpdateNearestFrom(GlobalsVariable.QueenA.transform);
         }
         else
         {
-            if (GlobalsVariable.AliveUnitsTeamA.Count == 0) return;
+            if (GlobalsVariable.QueenB != null) return;
             CurrentMinecraftUnit.MovementHandler.UpdateNearestFrom(GlobalsVariable.QueenB.transform);
         }
         

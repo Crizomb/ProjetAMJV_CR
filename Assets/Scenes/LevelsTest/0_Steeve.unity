@@ -313,6 +313,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec1b1522613fbdc488a8f29e180a7720, type: 3}
+--- !u!1 &158618422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1501347960880913095, guid: ec1b1522613fbdc488a8f29e180a7720, type: 3}
+  m_PrefabInstance: {fileID: 158618421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &213634501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -925,6 +930,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 549236704355970449, guid: b9a7a5b5e81a8b444a6f4ec17276f004, type: 3}
+      propertyPath: GameUI
+      value: 
+      objectReference: {fileID: 158618422}
     - target: {fileID: 5005827454598363359, guid: b9a7a5b5e81a8b444a6f4ec17276f004, type: 3}
       propertyPath: m_Name
       value: ShopCanvas
