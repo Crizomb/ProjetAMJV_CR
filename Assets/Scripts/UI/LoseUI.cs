@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class LoseUI : MonoBehaviour
 {
-    [SerializeField] GameUI gameUI;
+    [SerializeField] private GameUI gameUI;
 
     [SerializeField] TextMeshProUGUI time;
 
@@ -14,15 +14,9 @@ public class LoseUI : MonoBehaviour
         time.text = gameUI.GetComponent<GameUI>().time.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Retry()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        GameManager.Instance.ReloadLevel();
     }
 
     public void MainMenu()

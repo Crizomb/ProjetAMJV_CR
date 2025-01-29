@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 5144714098964261609}
   m_Layer: 5
   m_Name: WinCanvas
-  m_TagString: Untagged
+  m_TagString: WinningUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,7 +254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 1335902319491163578}
-  gameUI: {fileID: 0}
 --- !u!1 &2994547276816314867
 GameObject:
   m_ObjectHideFlags: 0
