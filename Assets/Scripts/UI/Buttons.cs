@@ -17,7 +17,9 @@ public class Buttons : MonoBehaviour
 
     public void PlayGame()
     {
-        GameManager.Instance.GoNextLevel();
+        this.gameObject.SetActive(false);
+        GameObject.Find("Rules").SetActive(true);
+        //GameManager.Instance.GoNextLevel();
     }
 
     public void LaunchSettings()
